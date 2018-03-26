@@ -64,6 +64,8 @@ var json =
           "mall": {
             "mallId": "whgj", 
             "mallName": "武汉公交", 
+	"manger":"测试人2",
+          "phone":"1388888888",
             "logo": "public/images/new/shoplogo.png", 
             "background": "public/images/new/background.png", 
             "banner": "public/images/new/main.png", 
@@ -153,12 +155,22 @@ var json =
                     +''
     }
 
-        var h1=''
+       var h1=''
                  +'<nav class="navbar" style="height:4rem;min-height: auto;">'
                  +'<img src="public/images/new/logo.png" class="pull-left" alt="" />'
                  +'<img src="'+json.mall.logo+'" class="pull-right" alt="" style="width:12rem;"  />'
                  + '</nav>'
                  +'<div class="container-fluid">'
+                 +'<div style="width:100%;height:5rem;padding: 0 4px;margin: 10px 0;">'
+                 + '<div class="pull-left">'
+                 + '<img src="public/images/new/pop.png" alt="" style="width:5rem;" >'
+                 +'<span style="font-weight:bold;"> '+json.mall.manger+'</span>'
+                 +'</div>'  
+                 + '<div class="pull-right" style="position:relative;">'
+                 + '<img src="public/images/new/nummsg.png" alt="" style="width:13rem;margin-top: 1rem;" >'
+                 +'<span style="position:absolute;top: 1.75rem;left:32%;color: #FFF;"> '+json.mall.phone+'</span>'
+                 +'</div>'  
+                 +'</div>'
                  +'<img src="'+json.mall.banner+'" alt="" style="width:100%;height:6rem" >'
                  + '<div id="productList" style="background:url('+json.mall.background+') no-repeat ;background-size: 100% 100%;padding-top: 1px;">'
                  +h2
