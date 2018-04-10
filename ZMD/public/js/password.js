@@ -7,7 +7,7 @@ function createDIV(num){
   pawDiv.className="pawDiv";
   box.appendChild(pawDiv);
   var paw=document.createElement("input");
-  paw.type="password";
+  paw.type="text";
   paw.className="paw";
   paw.maxLength="1";
   paw.readOnly="readonly";
