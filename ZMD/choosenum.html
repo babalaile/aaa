@@ -98,8 +98,11 @@ clear: both;
 .modal-dialog {
     margin-top: 40%;
 }
-.topM{
-   margin-top:25%!important;
+.topIOS{
+   margin-top:40px!important;
+} 
+.topADR{
+   margin-top:20%!important;
 } 
  </style>
 
@@ -313,19 +316,43 @@ clear: both;
 
 <script>
 
+var osUserAgent = navigator.userAgent.toLowerCase();
+
+
    $("input.paw").focus(function(){
 
-      $(".modal-dialog").addClass("topM")
 
-   });
-    $("input.paw").blur(function(){
+    if (osUserAgent.indexOf("iphone") > -1 )  {
 
-      $(".modal-dialog").removeClass("topM")
+      $(".modal-dialog").addClass("topIOS")
+   }
 
-   })
+  if (osUserAgent.indexOf("android") > -1 || osUserAgent.indexOf("adr") > -1) {
+  
+      $(".modal-dialog").addClass("topADR")
+  }
+
+ });
 
 
- $("#OldNumInput").focus(function(){
+
+$("input.paw").blur(function(){
+
+      
+    if (osUserAgent.indexOf("iphone") > -1 )  {
+
+      $(".modal-dialog").removeClass("topIOS")
+   }
+
+   if (osUserAgent.indexOf("android") > -1 || osUserAgent.indexOf("adr") > -1) {
+  
+      $(".modal-dialog").removeClass("topADR")
+  }
+
+ })
+
+
+/* $("#OldNumInput").focus(function(){
 
       $(".modal-dialog").addClass("topM")
 
@@ -335,9 +362,10 @@ clear: both;
 
       $(".modal-dialog").removeClass("topM")
 
-   })
+   })*/
 
-</script> 
+
+</script>  
 
 <script type="text/javascript">
         (function($){
