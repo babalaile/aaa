@@ -96,8 +96,11 @@ clear: both;
   background:#FFF!important;
 }
 .modal-dialog {
-    margin-top: 40%!important;
-}	 
+    margin-top: 40%;
+}
+.topM{
+   margin-top:10px!important;
+} 
  </style>
 
   <title></title>
@@ -308,6 +311,12 @@ clear: both;
 <script type="text/javascript" src="public/js/common.js"></script>
 <script type="text/javascript" src="public/js/alert.js"></script>
 
+<script>
+   $("input.paw").focus(function(){
+      $(".modal-dialog").addClass("topM")
+   })
+
+</script> 
 
 <script type="text/javascript">
         (function($){
