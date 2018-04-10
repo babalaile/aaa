@@ -122,7 +122,7 @@ a:hover.slidesjs-stop { background-position: -41px -18px;}
 .slides a:link,#slides a:visited {color: #333}
 .slides a:hover,#slides a:active { color: #9e2020 }
 
-.app-fixed{position: fixed;bottom: 0px; background-color: #FAFAF9;width: 100%;left: 0;height: 46px;}
+.app-fixed{position: fixed;bottom: 0px; background-color: #FAFAF9;width: 100%;left: 0;height: 46px;z-index: 99999;}
 .app-fixed .app-nav{}
 .app-nav{ padding: 0;}
 .app-nav .appItem{text-align: center;}
