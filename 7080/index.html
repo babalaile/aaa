@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/demo.css">
+
+</head>
+<body>
+
+    <nav class="navbar">
+        <img alt="" src="images/logo.jpg" width="30%" class="pull-right" style="margin: 30px 10px;">
+    </nav>
+
+   <div class="container-fluid page">
+
+    <form action="">
+	
+		  <div>
+             <p style="margin:0;">
+                <input type="text" class="phoneNum" placeholder="请输入蚂蚁红包卡号码" maxlength="11" id="phone">
+             </p>
+           
+             <p class="codeNum">
+                 <input type="text" placeholder="请输入验证码" id="codePhone" maxlength="6">
+                 <span class="sendCode" id="sendCode" onclick="sendCode()">发送验证码 </span>
+                 <span  id="resetCode" style="background:#ccc;display:none;padding:8px;"><span id="time_sec"></span> 秒后重发</span>
+             </p>
+              <p style="margin:0;border-bottom: 1px solid #E8E7E4;">
+                <input type="text" class="phoneNum" placeholder="请输入享受红包返还的支付宝帐号"  id="Alipay">
+             </p>
+          
+            <p class="Next">
+              <button type="button" class="btn btn-default btn-block" id="subNEXT">提 交</button>
+            </p>
+		 </div>
+
+    </form>
+
+   </div>
+
+
+ <!-- 查询后弹框 -->
+ <div class="hidefloor">  </div>
+
+ <div class="confirm">
+       <p style="margin-top: 50px;">蚂蚁红包卡号码：<span id="phoneMsg"></span></p>
+       <p style="margin-top: 15px;">支付宝帐号：<span id="alipayMsg"></span></p>
+       <p style="margin-top: 30px;">
+           <button type="button" class="btn" id="cancleBTN" style="background:#BBB;color: #FFF;border:none;">取 消</button>
+           <button type="button" class="btn btn-success" id="sureBTN" style="margin-left:20px;background:#ff7600;border:none;">确 定</button>
+       </p>
+       <img src="images/close.jpg" alt="" class="closeImg">
+ </div>
+
+  
+</body>
+</html>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/alert.js"></script>
+
+
+<!-- 手机登陆验证 -->
+<script>
+ 
+var isPhone = 1;
+
+function sendCode(){
+
+  testPhone(); //验证手机号码
+
+  if(isPhone){
+
+    resetCode(); //倒计时
+
+  }
+  
+}
+
+//验证手机号码
+
+function testPhone(){
+
+ var phoneval = $("#phone").val();
+
+  var pattern =  /^1{1}[3578]{1}[0-9]{9}$/;
+
+   isPhone = 1;
+
+    if(phoneval == '') {
+        alert('请输入您的红包卡号');
+        isPhone = 0;
+        return false
+    }
+   else if(!pattern.test(phoneval)){
+        alert('请输入正确的手机号');
+        isPhone = 0;  
+        return false 
+    }
+   else{  
+
+       return true;
+     }
+ }
+
+
+//倒计时
+function resetCode(){
+
+alert("验证码已发送至您的手机")
+    $('#sendCode').hide();
+    $('#resetCode').show();
+
+  var second = 60;
+
+  $('#time_sec').html(second);
+
+  var timer = null;
+  timer = setInterval(function(){
+    second -= 1;
+    if(second >0 ){
+      $('#time_sec').html(second);
+    }else{
+      clearInterval(timer);
+      $('#sendCode').show();
+      $('#resetCode').hide();
+    }
+  },1000);
+}
+
+
+  /*下一步点击*/
+
+$("#subNEXT").click(function(){
+  
+    var phoneval = $("#phone").val(); //手机号
+
+    var codeNum = $("#codePhone").val();//输入的验证码
+
+    var Alipay = $("#Alipay").val();//支付宝
+
+    var phoneCode =666666;  //获取到的验证码
+
+    var pattern =  /^1{1}[3578]{1}[0-9]{9}$/;
+
+  
+    if(phoneval == '') {
+        alert('请输入您的红包卡号');
+        return false
+    }
+	   else if(!pattern.test(phoneval)){
+	        alert('请输入正确的手机号');
+	        return false 
+	    }
+
+	  else if(codeNum==""){
+	  	alert("请输入验证码");
+	  	return false;
+	  }
+
+	 else if(codeNum!=phoneCode){
+	       alert("您的验证码填写有误");
+	       $("#codePhone").val("");
+	       	return false;
+	    }
+
+	  else if(Alipay==""){
+	  	alert("请输入支付宝帐号");
+	  		return false;
+	  }
+	  else{
+	  
+	   $(".confirm").show();
+	   $(".hidefloor").show();
+       $("#phoneMsg").html(phoneval);
+       $("#alipayMsg").html(Alipay)
+  }
+})
+
+
+//取消
+
+$("#cancleBTN").click(function(){
+	   $(".confirm").hide();
+	   $(".hidefloor").hide();
+	    $("#phoneMsg").html("");
+       $("#alipayMsg").html("")
+})
+
+//关闭
+
+$(".closeImg").click(function(){
+	   $(".confirm").hide();
+	   $(".hidefloor").hide();
+	   $("#phoneMsg").html("");
+       $("#alipayMsg").html("")
+})
+
+//确定提交
+
+$("#sureBTN").click(function(){
+
+    $(".confirm").hide();
+    $(".hidefloor").hide();
+
+    var phoneval = $("#phone").val(); //手机号
+   
+    var Alipay = $("#Alipay").val();//支付宝
+    
+    alert(phoneval+Alipay)
+
+})
+
+
+</script>
+
+
+
+
+
