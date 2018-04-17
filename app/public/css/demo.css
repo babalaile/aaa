@@ -16,14 +16,17 @@ body{
 .orderMsg input,.orderMsg textarea {
     border: 0;
     outline: none;
- 
+   font-size: 15px;
 }
 .orderMsg .list-group-item{
 	border:0;
 	margin-bottom:0;
 	border-bottom: 1px solid #ddd;
 }
-
+.orderMsg li span{
+	font-size: 15px;
+	margin-top:2px;
+}
 .titleMsg{
     padding-top: 15px;
     padding-left: 15px;
