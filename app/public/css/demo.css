@@ -1,0 +1,149 @@
+body{
+	background: #F8F8F8;
+	color: #333;
+}
+.PADDING{
+	padding-bottom:152px!important;
+	}
+#ADD{
+    width: 100%;
+    padding: 3px 0;
+    overflow: hidden;
+}
+.orderMsg{
+	margin-bottom: 0;
+}
+.orderMsg input,.orderMsg textarea {
+    border: 0;
+    outline: none;
+    font-size: 15px;
+}
+.orderMsg .list-group-item{
+	border:0;
+	margin-bottom:0;
+	border-bottom: 1px solid #ddd;
+}
+.orderMsg li span{
+	font-size: 15px;
+}
+.titleMsg{
+    padding-top: 15px;
+    padding-left: 15px;
+    background: #F8F8F8;
+}
+.Rimg{
+	position: absolute;
+	top: 10px;
+	right: 8px;
+
+}
+.Rimg img{
+	width: 10px;
+}
+.listgroupLast{
+    padding-bottom: 0;
+}
+.canUse{
+	padding: 15px;
+	padding-bottom: 0;
+	background: #FFF;
+}
+.media{
+	border-bottom: 1px solid #eee;
+    height: 102px;
+    position: relative;
+    
+}
+.media h4{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 13px;
+   
+}
+.media p{
+	 margin-bottom:0px;
+}
+.CHECK{
+	position: absolute;
+	right: 0;
+	top: 32px;
+}
+.media-body{
+	width: 58%;
+	float: left;
+    margin-top: 4px; 
+}
+.media-left{
+	float: left;
+}
+.preferential {
+	overflow: hidden;
+	height: 52px;
+}
+.preferential span{
+	border:1px solid #FF5000;
+	color: #FF5000;
+	font-size: 12PX;
+	padding:2px 4px;
+	margin-right: 5px;
+	border-radius: 4px;
+	margin-top: 2px;
+    display: inline-block;
+}
+.media-body .price{
+	font-size: 16px;
+	color: #FF5000;
+	font-weight: bold;
+}
+.custom{
+	text-align: center;
+	margin:0;
+	padding-bottom: 7px;
+}
+.custom a{
+	color: #333;
+	text-decoration: none;
+}
+ .app-fixed{
+    position: fixed;
+    bottom: 0px;
+    background-color: #FFF;
+    width: 100%;
+    left: 0;
+    height: 132px;
+    z-index: 88;
+    padding: 15px;
+} 
+.canUse,.app-fixed{
+	display: none;
+}     
+.check{
+	display: none;
+}
+.app-fixed button{
+	background: #1CCFC9!important;
+	color: #FFF!important;
+	border-radius: 6px;
+	font-size: 18px;
+	outline:0 none!important;
+}
+.app-fixed p{
+	color: #A6A6A6;
+	line-height: 24px;
+}
+/* .gryblank{
+	height: 30px;
+    background: #F8F8F8;
+    margin: 0 -15px;
+} */
+.nonsupport{
+	display: none; 
+	text-align: center;
+	padding-top: 20px;
+	background: #FFF;
+	padding-bottom: 100px;
+}
+.nonsupport h4{
+	color: #4a4a4a;
+}
