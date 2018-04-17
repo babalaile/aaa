@@ -2,6 +2,9 @@ body{
 	background: #F8F8F8;
 	color: #333;
 }
+input{
+	-webkit-appearance: none;
+}
 .PADDING{
 	padding-bottom:152px!important;
 	}
