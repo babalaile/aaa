@@ -23,9 +23,7 @@ body{
 	margin-bottom:0;
 	border-bottom: 1px solid #ddd;
 }
-.orderMsg li span{
-	font-size: 15px;
-}
+
 .titleMsg{
     padding-top: 15px;
     padding-left: 15px;
