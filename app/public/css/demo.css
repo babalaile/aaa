@@ -1,12 +1,9 @@
 body{
-	background: #F8F8F8;
 	color: #333;
 }
-input{
-	-webkit-appearance: none;
-}
+
 .PADDING{
-	padding-bottom:152px!important;
+	padding-bottom:120px!important;
 	}
 #ADD{
     width: 100%;
@@ -23,7 +20,6 @@ input{
     font-size: 15px;
 }
 .orderMsg .list-group-item{
-	/* height: 46px; */
 	border:0;
 	margin-bottom:0;
 	border-bottom: 1px solid #ddd;
@@ -34,9 +30,9 @@ input{
 	font-size: 15px;
 }
 .titleMsg{
-    padding-top: 15px;
-    padding-left: 15px;
     background: #F8F8F8;
+    padding: 15px 0 10px 15px;
+    margin-bottom: 0;
 }
 .Rimg{
 	position: absolute;
@@ -66,7 +62,6 @@ input{
     text-overflow: ellipsis;
     white-space: nowrap;
     font-size: 13px;
-   
 }
 .media p{
 	 margin-bottom:0px;
@@ -101,7 +96,6 @@ input{
 .media-body .price{
 	font-size: 16px;
 	color: #FF5000;
-	font-weight: bold;
 }
 .custom{
 	text-align: center;
@@ -118,9 +112,11 @@ input{
     background-color: #FFF;
     width: 100%;
     left: 0;
-    height: 132px;
+    height: 90px;
     z-index: 88;
-    padding: 15px;
+    -moz-box-shadow:  0px -2px 10px #888888;
+    box-shadow: 0px -2px 10px #888888;
+    -webkit-box-shadow: 0px -2px 10px #888888;
 } 
 .canUse,.app-fixed{
 	display: none;
@@ -131,13 +127,15 @@ input{
 .app-fixed button{
 	background: #1CCFC9!important;
 	color: #FFF!important;
-	border-radius: 6px;
+	border-radius:0;
 	font-size: 18px;
 	outline:0 none!important;
 }
 .app-fixed p{
 	color: #A6A6A6;
 	line-height: 24px;
+	background: #FFF;
+	padding: 2px;
 }
 .nonsupport{
 	display: none; 
@@ -153,3 +151,93 @@ input{
 .orderMsg li p{
 	padding-top: 10px;
 }
+
+.container-fluid .pager {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    list-style: none;
+    height: 4rem;
+    line-height: 4rem;
+     background: #FFF;
+}
+.pager .center-block{
+	 font-size: 15px;
+	 margin-left: -50px;
+}
+.container-fluid .pager a{
+    border: none;
+    border-radius: 0px;
+    padding:0 14px;
+    font-size: 15px;
+    color: #1CCFC9;
+}
+.read{
+	background: #FFF;
+	padding: 0 15px;
+    margin: 8px 0;
+}
+.https{
+	top: 14%;
+}
+.https .modal-body p{
+	margin:0;
+	text-indent: 28px;
+}
+
+button.close{
+    position: absolute;
+    top: 400px;
+    LEFT: 49%;
+    border-radius: 12px;
+    OPACITY: 1;
+    BORDER: 1px solid #FFF;
+    PADDING: 0 4px;
+    color: #FFF;
+    font-weight: normal;
+    text-shadow:none;
+}
+.https .modal-dialog{
+	width: 80%;
+    margin-left: 10%;
+}
+
+.modal-backdrop.in{
+	opacity: 0.8;
+}
+.noService{
+	text-align:center;
+	margin-top: 40px;
+}
+.noService a{
+	color: #00C0F3!important;
+}
+.noService .btn{
+	border-color: #00C0F3!important;
+	color: #00C0F3!important;
+	border-radius:14px;
+	outline: 0 none!important;
+	background: #FDFDFF!important;
+	font-size: 16px;
+}
+.app-fixedIndex{
+    position: fixed;
+    bottom: 0px;
+    background-color: #FFF;
+    width: 100%;
+    left: 0;
+    height: 46px;
+    z-index: 88; 
+} 
+    
+.app-fixedIndex button{
+	background: #1CCFC9!important;
+	color: #FFF!important;
+	border-radius: 0;
+	font-size: 18px;
+	outline:0 none!important;
+}
+.bodyBG{
+	background: #F8F8F8!important;
+}
+

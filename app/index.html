@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+  
+	 <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+     <link rel="stylesheet" type="text/css" href="public/css/city-pick.css" />
+	 <link rel="stylesheet" type="text/css" href="public/css/demo.css" />
+
+   <title></title>
+</head>
+<body>
+    
+    <div class="container-fluid" style="padding:0;padding-bottom:76px;background: #F8F8F8;">
+       <ul class="pager">
+            <li class="previous">
+                <a href="javascript:window.history.go(-1);">
+                   <span class="glyphicon glyphicon-menu-left"></span>返回
+                </a>
+            </li>
+            <li class="center-block">宽带0元预约</li>
+        </ul>
+
+        <img src="public/images/index.png" alt="" width="100%">
+    
+    </div>
+
+   <!-- 预约-->
+      <div class="app-fixedIndex">
+          
+          <button type="button" class="btn btn-lg btn-block" id="handle">立即预约</button>
+       </div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/js/textarea.js"></script>
+<script type="text/javascript" src="public/js/city-weui.js"></script>
+<script type="text/javascript" src="public/js/city-pick.js"></script>
+<script type="text/javascript" src="public/js/alert.js"></script>
+
+
+<script>
+    $("#handle").click(function(){
+    var code = 1 ;
+
+    if(code ==1){
+        window.location.href = "order.html"
+    }
+    else{
+        window.location.href = "noService.html"
+    }
+
+ })
+
+
+</script>

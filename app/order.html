@@ -15,57 +15,59 @@
 </head>
 <body>
     
+
     <div class="container-fluid" style="padding:0;">
+
+        <ul class="pager">
+            <li class="previous">
+                <a href="javascript:window.history.go(-1);">
+                   <span class="glyphicon glyphicon-menu-left"></span>返回
+                </a>
+            </li>
+            <li class="center-block">宽带0元预约</li>
+        </ul>
       
-        <div class="">
+         <div>
             <form action="order_confirm.html" method="post" id="orderinfo" name="orderinfo" enctype="multipart/form-data">
               
-                <p class="titleMsg">填写信息</p>
+                <p class="titleMsg" style="color: red;">填写宽带办理信息</p>
                
                 <div class="tableItem">
 
                     <ul class="orderMsg list-group">
-                      
-                       <li class="list-group-item">
+                        <li class="list-group-item">
                           <p>姓名：<input type="text"  id="name"></p>
-            
-                       </li>
-
-                       <li class="list-group-item">
-                         <p>身份证号码：<input type="text" id="idCard"></p>
-                            
-                       </li>
+                        </li>
                         <li class="list-group-item">
-
+                          <p>身份证号码：<input type="text" id="idCard"></p>
+                        </li>
+                        <li class="list-group-item">
                           <p>联系方式：<input type="text" id="phone"></p>
-                          
-                       </li>
+                        </li>
                         <li class="list-group-item">
-
-           <p >安装地址： <input type="text" id="city-picker" > <label for="city-picker" class="Rimg" ><img src="public/images/right.png" alt="" ></label></p>
-
-                         
-                       </li>
-                       <li class="list-group-item listgroupLast">
-                          <textarea id="ADD" placeholder="请输入详细地址" style="resize: none; height:30px; overflow-y: hidden;"></textarea>
-                       </li>
+				           <p>安装地址： <input type="text" id="city-picker" > 
+				              <label for="city-picker" class="Rimg" ><img src="public/images/right.png" alt="" ></label>
+				           </p>
+                        </li>
+                        <li class="list-group-item listgroupLast">
+                           <textarea id="ADD" placeholder="请输入详细地址" style="resize: none; height:30px; overflow-y: hidden;"></textarea>
+                        </li>
                      </ul>
                 </div>
 
                 <p class="titleMsg">所在地区可用宽带</p>
 
-              <div class="canUse">
-                <ul class="media-list">
-		
-				</ul>
-				<p class="custom"><a href=""><img src="public/images/kefu.png" alt="">客服</a></p>
-           
-              </div>
+	              <div class="canUse">
+	                <ul class="media-list">
+			
+					</ul>
+					<p class="custom"><a href=""><img src="public/images/kefu.png" alt="">客服</a></p>
+	              </div>
 
-              <div class="nonsupport">
-                   <img src="public/images/nosup.png" alt="" width="90">
-                   <h4>当前地区暂不支持该业务</h4>
-              </div>
+	              <div class="nonsupport">
+	                   <img src="public/images/nosup.png" alt="" width="90">
+	                   <h4>当前地区暂不支持该业务</h4>
+	              </div>
                    
             </form>
         </div>
@@ -73,9 +75,76 @@
 
      <!-- 下单-->
       <div class="app-fixed">
-          <p>办理该业务需开通支付宝免密支付服务，服务将在该笔订单结束后自动解除。</p>
+            <div class="read">
+                <label>
+                    <input type="radio" onclick="javascript:this.value='ok';" name="agree" value=""> 我已经阅并读同意
+                </label>
+                <span style="color:#1CCFC9;" data-toggle="modal" data-target="#myModal">《芝麻信用授权协议》</span>
+            </div>
+            <!--   <p>办理该业务需开通支付宝免密支付服务，服务将在该笔订单结束后自动解除。</p> -->
           <button type="button" class="btn btn-lg btn-block" id="confirmOrder">芝麻信用先享后付，立即下单</button>
        </div>
+
+<!-- 协议 -->
+
+<div class="modal fade https" tabindex="-1" role="dialog" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+     
+        <h4 class="modal-title" align="center">芝麻信用授权协议</h4>
+      </div>
+      <div class="modal-body" style="height: 300px; overflow: auto;">
+        <p>1.授权<span style="color: red;">中国电信股份有限公司湖北分公司（以下简称“湖北电信”）</span>将以下信息包括但不限于姓名、身份证号码和手机号码传递给芝麻信用管理有限公司（以下简称“芝麻信用”），用于芝麻信用自行或通过合作机构对你的身份信息进行校验；</p>
+<p>2. 你同意《芝麻服务协议》并开通芝麻信用服务。如果您已经是芝麻信用用户，您无需重复签订下附的《芝麻服务协议》。</p>
+<p>3. 授权湖北电信向芝麻信用查询你的芝麻分和相关信用信息，用于评估湖北电信与你之间的交易或服务条件。</p>
+ 
+<p>芝麻服务协议</p>
+<p>本协议更新于2015年12月25日</p>
+       <p> 本协议是您和芝麻信用管理有限公司（以下简称“我们”）为明确服务内容及双方权利义务等内容而签订。</p>
+        <p>您需特别关注和充分理解粗体字的内容。</p>
+        <p>当您在相关页面上点击确认的时候，例如，您点击“开通芝麻信用”或类似文字的按钮，或者实际使用芝麻服务（以下简称“服务”），请您事先仔细阅读本协议内容，您点击确认或实际使用服务即代表您接受协议的内容。</p>
+         <p>本协议内容包含现在及将来我们通过网络及（或）通讯方式告知您的各项操作提示、规则、公告、说明等（以下统称“服务规则”）。</p>
+         <p>如果您在任何时候对任何内容存在疑虑或异议，请您立即联系我们（联系电话0571-88158055），以便我们对相关内容进行解释和说明，使您能够充分理解，从而帮助您决定是否接受服务规则及使用我们的服务。</p>
+<p>一、定义及解释</p>
+         <p>芝麻服务：指我们现在和将来实际向您提供的征信及其他服务。</p>
+         <p>处理：指对任何信息的保存、整理、分析、比对、演算、归纳及（或）加工等各项操作。</p>
+         <p>网络及（或）通讯方式：指通过我们和我们合作伙伴的网站、客户端、站内信或您提供给我们的通讯信息，比如您的电邮、电话、手机短信等等。</p>
+         <p>适用的法律法规：包括《征信业管理条例》及其他适用的任何法律法规。</p>
+         <p>书面：一切能够通过载体记载内容的形式，包括纸质及电子形式。</p>
+<p>二、服务规则</p>
+         <p>（一）您理解，为了给您提供客观、科学、全面的信用管理及评价，以及其他本协议项下服务的需要，您授权我们可以从合法保存有您信息的第三方，采集及处理您的各类信息，同时为避免每次采集都需要经过您的反复确认而导致过程繁杂，或者因此给您带来的不便，您同意第三方可直接向我们提供您的信息而不需要您再次授权。采集您的信息包括但不限于您的个人信息、行为信息、交易信息、资产信息、设备信息等。您已经认识到您（作为个人用户）的收入、存款、有价证券、商业保险、不动产的信息和纳税数额信息对于您而言是相当私密而重要的。您同意我们向第三方采集并在适用的法律法规许可的范围内向信息使用者依法提供这些信息时，您已经充分理解并知晓该等信息被提供和使用的风险。这些风险包括但不限于:纳入这些信息对您的信用评级（评分）、信用报告等结果可能产生的不利影响，该等信息被本公司依法提供给第三方后被他人不当利用的风险，因您的信用状况较好而造成您被第三方向您推销产品或服务等打扰的风险。</p>
+            <p> 您同意可直接向我们提供信息的第三方包括但不限于：金融机构、类金融机构、电子商务公司、电信运营商、政府公共信用信息平台（例如上海、杭州市信用中心）及事业单位等一切盈利性、非盈利性、公共、民间的机构及组织。</p>
+             <p>同时我们向您承诺，我们不会采集您的宗教信仰、基因、指纹、血型、疾病和病史信息以及适用的法律法规禁止采集的任何个人信息，同时我们也不会采集您的聊天、短信、通话等个人信息，也不会采集、追踪您在社交媒体上的言论信息。</p>
+         <p>（二）您理解并同意，就征信服务而言，当第三方向我们查询您的相关信息时，该第三方应当获得您的事先书面同意并在约定范围使用。但是法律规定可以不经您授权即可查询的除外。因此，当您在相应场景下希望我们根据您的授权向第三方提供您的信息时，您应当向第三方做出清楚明确的授权，否则可能导致我们拒绝提供相应服务，或错误提供该等服务，因此可能会给您造成不利影响或损失。您充分理解并同意此结果的发生是由于您授权不清或不够明确导致，所以您将承担相应的后果。</p>
+             <p>您（作为企业、事业单位等组织）理解并同意，您同意第三方查询您的非贷款类及其他非涉及商业秘密信息时，我们可以直接向第三方提供您的相关信息。</p>
+         <p>（三）为降低您身份被冒用及您关联非本人风险事件而影响您享受有关服务的风险，您同意我们在收到第三方提供的您的信息时，授权我们及我们的合作机构可通过您所留存的信息进行对比分析，直接向该第三方输出您的信息是否真实、准确、有效，以及是否存在关联风险事件的判断结果信息。但基于保护您个人信息的需要，在提供本款服务过程中，无论是我们还是我们的合作机构都不会在任何情况下输出除判断结果信息外的您的其他信息。</p>
+         <p>我们善意的提醒您，为了保护您免受身份冒用或者因为关联非本人风险事件而遭受损失，您在第三方的注册、登录或使用相关服务过程中，第三方可能拒绝给您提供有关优惠条件或暂停、终止向您提供服务。如您因此受到上述影响，芝麻信用无须就此承担责任。</p>
+         <p>（四）为了外部机构给您提供更多优质的服务，包括享受有关优惠、享受更加便捷的流程体验等，您同意我们可将您的全部信息进行分析并将结果推送给我们的合作或服务的机构，考虑到该分析结果并不涉及您的具体信息或其他敏感信息，您同意上述分析结果的输出无须另行获得您的授权。</p>
+
+         <p>（五）您可以向我们请求撤销对第三方的信息查询授权。但如果您和第三方的业务关系尚未终止，比如您在享受信用租车、信用贷款、信用租房等服务期间，您同意第三方可在业务存续期间持续查询您的信息，同时我们有权不支持您撤销对相关第三方的信息查询的授权，以及终止/关闭本服务。</p>
+         <p>（六）如果您对于我们的服务有异议，您可以向我们提出，我们根据适用的法定期限会进行核查、处理及答复。</p>
+         <p>（七）我们的服务目前处于免费期。免费期届满时，我们会通过网络及（或）通讯方式提前向您告知，并告知您有关的收费细则。</p>
+     <p>三、服务限制及终止</p>
+        <p> 您同意如您违反以下保证或发生相关情形，我们将有权限制或终止向您提供本协议项下的部分或全部服务。</p>
+         <p>（一）如果您是个人用户，您向我们保证您已经年满16周岁，并具备完全民事行为能力。如果您是企业、事业单位等组织，您应是依法注册并合法开展经营活动或其他业务的主体。</p>
+         <p>（二）您不可以在任何时候将我们的服务用于任何非法目的，比如侵害他人合法权益，或者以非法方式使用我们的服务。</p>
+         <p>（三）您保证，在我们为您提供服务期间，您向我们提供的所有资料和信息都是真实、完整、准确的并能够及时更新。为了保障为您提供有效完整的服务，您同意在我们发现您的身份存疑或涉嫌冒用他人身份信息时，有权基于保护您及（或）其他第三方合理利益的需要，要求您配合补全或更新相关身份信息及资料。</p>
+         <p>（四）您保证，您不会授权他人使用我们的服务。比如您将使用本协议项下服务所需的载体，包括但不限于用于登录的账户、手机等披露或提供给其他人代替您操作、使用我们的服务。我们善意的提醒您，上述操作可能导致他人冒用您的身份使用本协议项下服务，因此给您造成损失或导致不良行为记录。</p>
+         <p>（五）如果我们认为您没有遵守本协议的约定，或者我们认为继续为您提供服务将会导致我们或第三方的合理利益受到损失。</p>
+             <p>服务终止后，为了后续异议或纠纷处理及未来查询相关信息的需要，从而保障我们及您的合法权益，您同意在服务终止后，我们仍可继续保留您使用我们的服务期间形成的所有信息和数据，但我们不会再主动采集您的任何信息。</p>
+<p>四、 服务中断或故障</p>
+         <p>我们的系统在下列状况发生时会无法正常运作，所以下列情形中我们无法向您提供服务。您对此充分理解并同意我们无须就下述情况所导致服务无法正常提供时给您造成的各种影响或损失承担责任：</p>
+         <p>（一）我们公告的系统停机维护期间。</p>
+        <p>（二）电信设备出现故障不能进行数据传输的。</p>
+
+      </div>
+    </div>
+  </div>
+
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+</div>
+
 
 </body>
 </html>
@@ -100,31 +169,36 @@
         title: "选择省市区/县",
         onChange: function (picker, values, displayValues) {
 
-        	$(".Rimg").hide();
-        	console.log(displayValues)
-
+         $(".Rimg").hide();
+        
          $(".picker-button").click(function(){
 
-		    var code =2;
+			var dataCode = $("#city-picker").attr("data-code")
 
-            //存在
-		      if(code==1){
+			var fdStart = dataCode.indexOf("42");
 
-	      	      $(".canUse").show();
-	              $(".app-fixed").show();
-	              $(".nonsupport").hide();
-	              $(".container-fluid").addClass("PADDING");
+			if(fdStart == 0){
+ 
+			    alert("湖北")
 
-		      }
-		      //不存在
-		      else{
+			      $(".canUse").show();
+			      $(".app-fixed").show();
+			      $(".nonsupport").hide();
+			      $(".container-fluid").addClass("PADDING");
+			      $("body").addClass("bodyBG")
 
-		          $(".nonsupport").show();
-		          $(".canUse").hide();
-		          $(".app-fixed").hide();
-		          $(".container-fluid").removeClass("PADDING");
+			}
+			else if(fdStart == -1){
 
-		      }
+			    alert("不是湖北")
+
+			      $(".nonsupport").show();
+			      $(".canUse").hide();
+			      $(".app-fixed").hide();
+			      $(".container-fluid").removeClass("PADDING");
+			      $("body").removeClass("bodyBG") 
+			}
+
           })
            
         }
@@ -138,41 +212,28 @@
 	             	"id":"001",
 	             	"img":"public/images/img.png",
 	                "title":"浙江电信20M3个月浙江电信20M3个月", 
-	                "price":"4000.00",
+	                "oldprice":"4000.00",
+	                "newprice":"3000.00",
 	                "preferential":
 	                    [
 	                        {"con":"送5元话券"},
-	                        {"con":"送5元话费券"},
-	                        {"con":"送5元话费券545345"},
-	                        {"con":"送5元话费券"},
-	                        {"con":"送5元话费券"},
+	                        {"con":"送5元话费券"}
+	                  
 	                    ] 
 	              },
 	               { 
 	             	"id":"002",
 	             	"img":"public/images/img.png",
 	                "title":"浙江电信20M3个月浙江电信20M3个月", 
-	                "price":"4000.00",
+	                "oldprice":"4000.00",
+	                "newprice":"3000.00",
 	                "preferential":
 	                    [
-	                        {"con":"送5元话费券"},
-	                        {"con":"送5元话费券"},
-	                     
-	                    ] 
-	              },
-	                { 
-	             	"id":"003",
-	             	"img":"public/images/img.png",
-	                "title":"浙江电信20M3个月浙江电信20M3个月", 
-	                "price":"4000.00",
-	                "preferential":
-	                    [
-	                        {"con":"送5元话费券"},
-	                        {"con":"送5元话费券"},
-	                     
+	                        {"con":"送5元话券"},
+	                        {"con":"送5元话费券"}
+	                  
 	                    ] 
 	              }
-	            
 	          ]
 
 for(var i=0;i<json.length;i++){
@@ -194,7 +255,7 @@ for(var i=0;i<json.length;i++){
 			  +' </div>'
 			  +'<div class="media-body">'
 			  +' <h4 class="media-heading"><span>'+item.title+'</span></h4>'
-			  +' <p class="price">￥<span>'+item.price+'</span></p>'
+			  +' <p class="price"><span style="color:#B2AEA8;text-decoration:line-through;">￥<span>'+item.oldprice+'</span></span> ￥<span id="newPrice">'+item.newprice+'</span></p>'
 			  +'<p class="preferential">'
 			  +h2
 			  +' </p>'
@@ -233,7 +294,6 @@ $(".media").click(function(){
 
  //确认下单
 
-var ok = false;
 
  $("#confirmOrder").click(function(){
 
@@ -250,11 +310,21 @@ var ok = false;
        }
     }
 
+
+
+if($("input[name=agree]:checked").length<1){
+       alert('请先阅读"芝麻信用授权协议"');
+        ok6 = false; 
+    }
+    else{
+		 ok6= true;
+	}
+
 	if(p.hasClass("active")){
 	      ok5= true;
 	  }
 	  else{
-	      alert("请选择套餐");
+	      alert("请选择宽带类型");
 	      ok5 = false;
 	  }
 	if($("#ADD").val()==""){
@@ -285,13 +355,19 @@ var ok = false;
 		 ok1= true;
 	}
 
+
 //全为真执行
 
- if(ok1&&ok2&&ok3&&ok4&&ok5){
+ if(ok1&&ok2&&ok3&&ok4&&ok5&&ok6){
 
-    alert(id)
+    var name = $("#"+id+"").find("h4 span").html();
+    var price = $("#"+id+"").find("#newPrice").html();
+
+   console.log(name)
+   console.log(price)
+
     
-  }  
+    }  
 
  })
 
