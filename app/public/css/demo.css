@@ -22,10 +22,15 @@ input{
    font-size: 15px;
 }
 .orderMsg .list-group-item{
-	height:40px;
+	height: 40px;
 	border:0;
 	margin-bottom:0;
 	border-bottom: 1px solid #ddd;
+	padding: 0 15px!important;
+}
+label{
+	font-weight: normal;
+	margin-top: 10px;
 }
 .orderMsg li span{
 	font-size: 15px;
