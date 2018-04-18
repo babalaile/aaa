@@ -79,7 +79,7 @@
                 <label>
                     <input type="radio" onclick="javascript:this.value='ok';" name="agree" value=""> 我已经阅并读同意
                 </label>
-                <span style="color:#1CCFC9;" data-toggle="modal" data-target="#myModal">《芝麻信用授权协议》</span>
+                <span style="color:#1CCFC9;" id="openHttp">《芝麻信用授权协议》</span>
             </div>
             <!--   <p>办理该业务需开通支付宝免密支付服务，服务将在该笔订单结束后自动解除。</p> -->
           <button type="button" class="btn btn-lg btn-block" id="confirmOrder">芝麻信用先享后付，立即下单</button>
@@ -156,6 +156,16 @@
 <script type="text/javascript" src="public/js/city-pick.js"></script>
 <script type="text/javascript" src="public/js/alert.js"></script>
 
+<script>
+
+ $("#openHttp").click(function(){
+
+    $('#myModal').modal('show');
+ })
+
+</script>
+
+
 <!-- textarea自适应 -->
 <script>
   var text = document.getElementById("ADD");
@@ -167,6 +177,7 @@
 <script>
     $("#city-picker").cityPicker({
         title: "选择省市区/县",
+
         onChange: function (picker, values, displayValues) {
 
          $(".Rimg").hide();
