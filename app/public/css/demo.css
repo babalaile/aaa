@@ -12,6 +12,7 @@ input{
     width: 100%;
     padding: 3px 0;
     overflow: hidden;
+    margin-top: 10px;
 }
 .orderMsg{
 	margin-bottom: 0;
@@ -42,8 +43,8 @@ label{
 }
 .Rimg{
 	position: absolute;
-	top: 10px;
-	right: 8px;
+	top: 0px;
+	right: 15px;
 
 }
 .Rimg img{
@@ -51,6 +52,7 @@ label{
 }
 .listgroupLast{
     padding-bottom: 0;
+    height: auto!important;
 }
 .canUse{
 	padding: 15px;
