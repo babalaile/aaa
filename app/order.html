@@ -2,14 +2,14 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="format-detection" content="telephone=no"/>
   
-	 <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
-     <link rel="stylesheet" type="text/css" href="public/css/city-pick.css" />
-	 <link rel="stylesheet" type="text/css" href="public/css/demo.css" />
+	  <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/city-pick.css" />
+	  <link rel="stylesheet" type="text/css" href="public/css/demo.css" />
 
    <title>宽带0元预约</title>
 </head>
@@ -25,26 +25,25 @@
          </li> 
           <li class="center-block">宽带0元预约</li>
       </ul> -->
-      
-         <div>
+     
             <form action="order_confirm.html" method="post" id="orderinfo" name="orderinfo" enctype="multipart/form-data">
               
                 <p class="titleMsg" style="color: red;">填写宽带办理信息</p>
                
                 <div class="tableItem">
 
-                     <ul class="orderMsg list-group">
+                    <ul class="orderMsg list-group">
                         <li class="list-group-item">
-                          <p><span style="width:35%;display:inline-block;">姓名：</span><input type="text"  id="name" style="text-align:right;width:65%;"></p>
+                          <p><span style="width:35%;display:inline-block;">姓名：</span><input type="text"  id="name" style="text-align:right;width:60%;"></p>
                         </li>
                         <li class="list-group-item">
-                          <p><span style="width:35%;display:inline-block;">身份证号码：</span><input type="text" id="idCard" style="text-align:right;width:65%;"></p>
+                          <p><span style="width:35%;display:inline-block;">身份证号码：</span><input type="text" id="idCard" style="text-align:right;width:60%;"></p>
                         </li>
                         <li class="list-group-item">
-                          <p><span style="width:35%;display:inline-block;">联系方式：</span><input type="text" id="phone" style="text-align:right;width:65%;"></p>
+                          <p><span style="width:35%;display:inline-block;">联系方式：</span><input type="text" id="phone" style="text-align:right;width:60%;"></p>
                         </li>
                         <li class="list-group-item">
-				           <p><span style="width:35%;display:inline-block;">安装地址：</span><input type="text" id="city-picker" style="text-align:right;width:65%;"> 
+				           <p><span style="width:35%;display:inline-block;">安装地址：</span><input type="text" id="city-picker" style="text-align:right;width:60%;"> 
 				              <label for="city-picker" class="Rimg" ><img src="public/images/right.png" alt="" ></label>
 				           </p>
                         </li>
@@ -59,19 +58,17 @@
 	              <div class="canUse">
 	                <ul class="media-list">
 			
-					       </ul>
-					<p class="custom"><a href=""><img src="public/images/kefu.png" alt="">客服</a></p>
+					        </ul>
+				        	<p class="custom"><a href=""><img src="public/images/kefu.png" alt="">客服</a></p>
 	              </div>
 
 	              <div class="nonsupport">
 	                   <img src="public/images/nosup.png" alt="" width="80">
 	                   <h4>当前地区暂不支持该业务</h4>
 	              </div>
-                   
             </form>
         </div>
-    </div>
-
+ 
      <!-- 下单-->
       <div class="app-fixed">
             <div class="read">
@@ -257,7 +254,7 @@ for(var i=0;i<json.length;i++){
 			  +' <img class="media-object check" src="public/images/check.png" alt="" width="26">'
 			  +' </div>'
 			  +'</li>'
-           +'' 
+         +'' 
 
     $('.media-list').append(h1);
 	
@@ -316,25 +313,25 @@ if($("input[name=agree]:checked").length<1){
 	      ok5= true;
 	  }
 	  else{
-	      alert("请选择宽带类型");
+	      alert("请选择宽带类型！");
 	      ok5 = false;
 	  }
 	if($("#ADD").val()==""){
-		 alert("请输入详细地址");
+		 alert("请输入详细地址！");
 		 ok4 = false;
 	}
 	else{
 		 ok4= true;
 	}
 	if($("#phone").val()==""){
-		 alert("请输入联系电话");
+		 alert("请输入联系电话！");
 		 ok3 = false;
 	}
 	else{
 		 ok3= true;
 	}
 	  if($("#idCard").val()==""){
-		 alert("请输入身份证号码");
+		 alert("请输入身份证号码！");
 		 ok2 = false;
 	}
 
@@ -342,7 +339,7 @@ if($("input[name=agree]:checked").length<1){
 		 ok2= true;
 	}
 	if($("#name").val()==""){
-		 alert("请输入姓名");
+		 alert("请输入姓名！");
 		 ok1 = false;
 	}else{
 		 ok1= true;
