@@ -163,7 +163,7 @@ body{
 }
 .pager .center-block{
 	 font-size: 15px;
-	 margin-left: -50px;
+	/*  margin-left: -50px; */
 }
 .container-fluid .pager a{
     border: none;

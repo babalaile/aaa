@@ -977,7 +977,7 @@ label>* {
 	color: #3d4145;
 	-webkit-transition-duration: .3s;
 	transition-duration: .3s;
-	height: 13rem;
+	height: 18rem;
 	background: #EFEFF4;
 	-webkit-transform: translate3d(0,100%,0);
 	transform: translate3d(0,100%,0);
@@ -1011,7 +1011,7 @@ label>* {
 
 .weui-picker-modal .picker-modal-inner {
 	position: relative;
-	height: 10.8rem
+	height: 16.8rem
 }
 
 .weui-picker-modal .picker-columns {
