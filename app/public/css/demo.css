@@ -1,6 +1,6 @@
 
 input[type=radio]{
-  vertical-align: middle;
+  vertical-align: -2px;_vertical-align: -1px;margin-right: 2px;
 }
 body{
 	color: #333;
