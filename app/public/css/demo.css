@@ -61,7 +61,7 @@ body{
 	overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 13px;
+    font-size: 14px;
 }
 .media p{
 	 margin-bottom:0px;
@@ -163,7 +163,6 @@ body{
 }
 .pager .center-block{
 	 font-size: 15px;
-	/*  margin-left: -50px; */
 }
 .container-fluid .pager a{
     border: none;
@@ -188,14 +187,10 @@ body{
 button.close{
     position: absolute;
     top: 400px;
-    LEFT: 49%;
-    border-radius: 12px;
+    LEFT: 0%;
     OPACITY: 1;
-    BORDER: 1px solid #FFF;
-    PADDING: 0 4px;
-    color: #FFF;
-    font-weight: normal;
-    text-shadow:none;
+    width: 100%;
+    outline: 0 none!important;
 }
 .https .modal-dialog{
 	width: 80%;

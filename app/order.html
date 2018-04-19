@@ -15,9 +15,17 @@
 </head>
 <body>
     
-
     <div class="container-fluid" style="padding:0;">
 
+      <!--   <ul class="pager">
+          <li class="previous">
+             <a href="javascript:window.history.go(-1);">
+                <span class="glyphicon glyphicon-menu-left"></span>返回
+             </a>
+         </li> 
+          <li class="center-block">宽带0元预约</li>
+      </ul> -->
+      
          <div>
             <form action="order_confirm.html" method="post" id="orderinfo" name="orderinfo" enctype="multipart/form-data">
               
@@ -51,7 +59,7 @@
 	              <div class="canUse">
 	                <ul class="media-list">
 			
-					</ul>
+					       </ul>
 					<p class="custom"><a href=""><img src="public/images/kefu.png" alt="">客服</a></p>
 	              </div>
 
@@ -133,7 +141,9 @@
     </div>
   </div>
 
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <img src="public/images/close.png" alt="" width="28">
+    </button>
 </div>
 
 
@@ -237,7 +247,7 @@ for(var i=0;i<json.length;i++){
 			  +' </div>'
 			  +'<div class="media-body">'
 			  +' <h4 class="media-heading"><span>'+item.title+'</span></h4>'
-			  +' <p class="price"><span style="color:#B2AEA8;text-decoration:line-through;">￥<span>'+item.oldprice+'</span></span> ￥<span id="newPrice">'+item.newprice+'</span></p>'
+			  +' <p class="price"><span style="color:#B2AEA8;text-decoration:line-through;"><span style="font-family:Arial;">¥</span><span>'+item.oldprice+'</span></span> <span style="font-family:Arial;">¥</span><span id="newPrice">'+item.newprice+'</span></p>'
 			  +'<p class="preferential">'
 			  +h2
 			  +' </p>'
