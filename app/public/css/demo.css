@@ -14,7 +14,7 @@
         vertical-align: top;
         width: 16px;
         height: 16px;
-        border: 1px solid #00bfff;
+        border: 1px solid #00bfff!important;
         outline:0 none!important;
         cursor: pointer;
         /*设置为圆形，看起来是个单选框*/
