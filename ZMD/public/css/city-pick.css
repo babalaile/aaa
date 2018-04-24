@@ -977,7 +977,7 @@ label>* {
 	color: #3d4145;
 	-webkit-transition-duration: .3s;
 	transition-duration: .3s;
-	height: 13rem;
+	height: 22rem;
 	background: #EFEFF4;
 	-webkit-transform: translate3d(0,100%,0);
 	transform: translate3d(0,100%,0);
@@ -1011,7 +1011,7 @@ label>* {
 
 .weui-picker-modal .picker-modal-inner {
 	position: relative;
-	height: 10.8rem
+	height: 20rem
 }
 
 .weui-picker-modal .picker-columns {
@@ -1219,7 +1219,7 @@ label>* {
 	right: 0;
 	height: 0;
 	width: 100%;
-	z-index: 100
+	z-index: 100000;
 }
 
 .picker-calendar-row:after,.picker-calendar-week-days:after {
