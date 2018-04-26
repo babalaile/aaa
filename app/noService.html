@@ -19,32 +19,47 @@
        <div class="noService">
           <img src="public/images/warn.png" alt="" width="70">    
           <h4>您暂时无法使用该服务</h4>
-          <p><a href="https://www.baidu.com/">继续提升芝麻分吧</a></p>
+          <p><a href="https://www.baidu.com/">继续提升芝麻分吧456</a></p>
           <p><a href="https://www.baidu.com/"><input class="btn btn-default" type="button" value="查看其他宽带"></a></p>
 
        </div>
     </div>
 
-  <table>
-           <tbody>
-                <tr>
-                    <td width="80">商&emsp;&emsp;品：</td>
-                    <td align="left">iphone6 plus||灰色||16G</td>
-                </tr>
-                <tr>
-                    <td>商品价格：</td>
-                    <td align="left">5788元</td>
-                </tr>
-                <tr>
-                    <td>号&emsp;&emsp;码：</td>
-                    <td align="left">17702709102</td>
-                </tr>
-                <tr>
-                    <td>选&ensp;套&ensp;餐：</td>
-                    <td align="left">49元享99元套餐</td>
-                </tr>
-            </tbody>
-         </table>	
+ <table width="100%" class="tables">
+                        <tr>
+                            <td width="80">商&emsp;&emsp;品：</td>
+                            <td align="left">${productDesc!}</td>
+                        </tr>
+                        <tr>
+                            <td>商品价格：</td>
+                            <td align="left"><span style="color:#FF7600;"><span>${pamentMoney!}元</span></td>
+                        </tr>
+                       
+	                        <tr>
+	                            <td>商品预存：</td>
+	                            <td align="left"><span style="color:#FF7600;"><span>${productMoney!}元</span></td>
+	                        </tr>
+                      
+	                        <tr>
+	                            <td>号码预存：</td>
+	                            <td align="left"><span style="color:#FF7600;"><span>${nbrMoney!}元</span></td>
+	                        </tr>
+                       
+	                         <tr>
+	                            <td>所选套餐：</td>
+	                            <td align="left">${offerName!}</td>
+	                        </tr>
+                       
+	                        <tr>
+	                            <td>所选号码：</td>
+	                            <td align="left">${accNbr}</td>
+	                        </tr>
+                      
+                        <tr>
+                            <td>总&ensp;金&ensp;额：</td>
+                            <td align="left"><span style="color:#FF7600;"><span>${sumMoney!}元</span></td>
+                        </tr>
+                    </table>
 	
 </body>
 </html>
