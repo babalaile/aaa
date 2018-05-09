@@ -46,6 +46,7 @@ input{
 	 background-size: 100% ;
      width: 100%;
      padding: 20px;
+     padding-top: 0px;
 }
 .signForm p{
 	 margin: 0 0 18px;
@@ -59,7 +60,7 @@ input{
     background-size: 100%; 
     width: 100%;
     padding:20px;
-    padding-top: 10px;
+    padding-top: 0px;
 }
 .awardForm p{
     margin: 0 0 18px;
