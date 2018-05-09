@@ -43,10 +43,9 @@ input{
 }
 .signForm{
 	 background:url(../images/redcols.png) no-repeat center center;
-	 background-size: 100%;
+	 background-size: 100% ;
      width: 100%;
      padding: 20px;
-     padding-top: 10px;
 }
 .signForm p{
 	 margin: 0 0 18px;
