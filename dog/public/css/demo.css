@@ -4,10 +4,6 @@ input::-webkit-input-placeholder{text-align: center;}
 input{
     outline: 0 none!important;
 }
-div>img{
-   display: block;
-}
-
 .app-fixedIndex{
     position: fixed;
     bottom: 0px;
@@ -46,10 +42,9 @@ div>img{
 }
 .signForm{
 	 background:url(../images/redcols.png) no-repeat center center;
-	 background-size: 100% ;
+	 background-size: 100% 100%;
      width: 100%;
      padding: 20px;
-     padding-top: 0px;
 }
 .signForm p{
 	 margin: 0 0 18px;
@@ -60,10 +55,9 @@ div>img{
 }
 .awardForm{
     background:url(../images/redcols.png) no-repeat center center;
-    background-size: 100%; 
+    background-size: 100% 100%; 
     width: 100%;
     padding:20px;
-    padding-top: 0px;
 }
 .awardForm p{
     margin: 0 0 18px;
