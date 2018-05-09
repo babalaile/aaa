@@ -4,6 +4,9 @@ input::-webkit-input-placeholder{text-align: center;}
 input{
     outline: 0 none!important;
 }
+div>img{
+   display: block;
+}
 
 .app-fixedIndex{
     position: fixed;
