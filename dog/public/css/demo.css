@@ -239,18 +239,18 @@ input{
     left: 0%;
     margin: 0 ; 
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     color: red;
 }
 .praiseTime{
     width: 100%;
     position: absolute;
-    top: 47%;
+    top: 47.5%;
     left: 0%;
      margin: 0 ; 
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
     color: red;
 }
