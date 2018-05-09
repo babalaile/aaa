@@ -152,7 +152,7 @@ input{
 }
 .serchBtn {
     position: absolute;
-    right: 12px;
+    right: 8px;
     top: 3px;
     z-index: 9999;
     border: 1px solid #000;
