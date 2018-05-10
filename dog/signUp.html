@@ -25,6 +25,11 @@
                <p>
                    <input type="text" class="form-control" id="petName" placeholder="输入宠物名字" style="background:#FFF244;">
                </p>
+		  <p style="position: relative;display: inline-block;width: 100%;">
+	               <input type='text' name='textfield' id='textfield' class='txt' readonly="readonly" placeholder="显示的图片路径"/>  
+	               <input type='button' class='btn' value='上传图片' style="width:40%;float:right;background:#FFF;"/>
+	               <input type="file" name="fileField" class="file" id="fileField" accept="image/jpg,image/png,image/jpeg,image/gif,image/bmp" onchange="document.getElementById('textfield').value=this.value" />
+                </p>
                 <p>
                   <input type="text" class="form-control" id="vedioAdr" placeholder="输入短视频地址" style="background:#FFF244;">
                </p>
