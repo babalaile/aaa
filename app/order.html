@@ -138,11 +138,27 @@
     </div>
   </div>
 
-    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <button type="button" class="closebtn" data-dismiss="modal" aria-label="Close">
         <img src="public/images/close.png" alt="" width="28">
     </button>
 </div>
 
+<!-- 详情 -->
+<div class="modal fade" tabindex="-1" role="dialog" id="picDetail" style="top:10%;">
+  <div class="modal-dialog" role="document" style="height: 80%;overflow: auto;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -10px;">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" align="center"></h4>
+      </div>
+      <div class="modal-body">
+          <img src="public/images/imgDetail.png" alt="" width="100%">
+      </div>
+    </div>
+  </div>
+</div>	
 
 </body>
 </html>
@@ -361,6 +377,13 @@ if($("input[name=agree]:checked").length<1){
 
  })
 
+/*打开详情*/
+ $(".media-object").click(function(event){
+
+   event.stopPropagation();
+
+   $('#picDetail').modal('show');
+ })
 
 
 </script>
