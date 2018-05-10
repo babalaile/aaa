@@ -187,13 +187,15 @@ body{
 	text-indent: 28px;
 }
 
-button.close{
+button.closebtn{
     position: absolute;
     top: 400px;
     LEFT: 0%;
     OPACITY: 1;
     width: 100%;
     outline: 0 none!important;
+    background: none;
+    border: 0;
 }
 .https .modal-dialog{
 	width: 80%;
