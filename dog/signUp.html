@@ -8,27 +8,8 @@
     <meta name="format-detection" content="telephone=no"/>
 	  <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
 	  <link rel="stylesheet" type="text/css" href="public/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="public/webuploader/webuploader.css">
     <title>报名</title>
-<style>  
- .txt{ 
-    height:34px;  
-    width:48%;
-    padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42857143;
-    background:#FFF244;
-    border-radius: 4px;
-}
-
-.file{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 34px;
-    opacity: 0;
-    width: 40%;
- }
-</style>
 </head>
 <body>
     <div class="container-fluid" style="padding:0;padding-bottom:46px;">
@@ -42,14 +23,21 @@
                <p>
                   <input type="text" class="form-control" id="phone" maxlength="11"  placeholder="输入手机号" style="background:#FFF244;">
                </p>
-               <p>
+                 <p>
                    <input type="text" class="form-control" id="petName" placeholder="输入宠物名字" style="background:#FFF244;">
                </p>
-		  <p style="position: relative;display: inline-block;width: 100%;">
-	               <input type='text' name='textfield' id='textfield' class='txt' readonly="readonly" placeholder="显示的图片路径"/>  
-	               <input type='button' class='btn' value='上传图片' style="width:40%;float:right;background:#FFF;"/>
-	               <input type="file" name="fileField" class="file" id="fileField" accept="image/jpg,image/png,image/jpeg,image/gif,image/bmp" onchange="document.getElementById('textfield').value=this.value" />
-                </p>
+               <p>
+                   <div id="cf_uploader" class="wu-example webuploader">
+                      <div id="thelist" class="uploader-list"></div>
+                      <div class="btns">
+                          <div id="cf_picker" class="picker">选择萌宠图片</div>
+                          <button id="ctlBtn" type="button" class="btn btn-default">开始上传</button>
+                      </div>
+                      <div id="fileList"></div>
+                      <input type="hidden" name="identityCardFrontSrc" id="identityCardFrontSrc" value="">
+                  </div>
+               </p>
+
                 <p>
                   <input type="text" class="form-control" id="vedioAdr" placeholder="输入短视频地址" style="background:#FFF244;">
                </p>
@@ -113,6 +101,9 @@
 <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="public/js/alert.js"></script>
+<script type="text/javascript" src="public/webuploader/webuploader.js"></script>
+<script type="text/javascript" src="public/js/upload.js"></script>
+
 
 <!-- 观看视频 -->
 <script>
@@ -217,7 +208,6 @@ $("#enroll").click(function(){
     else{
 
      $(":text").val("");
-   /* alert("报名成功！"+"<br><br>"+"您的萌宠编号："+pet)*/
 
       $(".hidefloor").show();
       $(".signSucc").show();
@@ -227,8 +217,45 @@ $("#enroll").click(function(){
 
 </script>
 
+<!-- 图片上传 -->
+<script type="text/javascript">
+    (function($){
+        $(document).ready(function(){
 
+           $("#cf_uploader").webUploads({
+               fileNumLimit:1,// 图片张数
+               pick:'#cf_picker',
+               //fileSingleSizeLimit:1024*1024*2,//2M
+               compress:{
+                   width: 800,
+                   height: 600,
+                   quality: 50,// 图片质量，只有type为`image/jpeg`的时候才有效。
+                   allowMagnify: false,// 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+                   crop: false,// 是否允许裁剪。
+                   preserveHeaders: true,// 是否保留头部meta信息。
+                   noCompressIfLarger: false,// 如果发现压缩后文件大小比原来还大，则使用原来图片 此属性可能会影响图片自动纠正功能
+                   compressSize: 0// 单位字节，如果图片大小小于此值，不会采用压缩。
+               },
+               uploadCompleteCallBack:function(fileListObj){
+                   var imgs=fileListObj.find('img');
+                   if(imgs.length>0){
+                       fileListObj.parent().find('input[type=hidden]').val(imgs.first().attr('data-src'));
+                   }else{
+                       fileListObj.parent().find('input[type=hidden]').val('')
+                   }
+               }
+           })
 
-
-
+            $("#orderinfo input[type=file]").change(function(){
+                var file = this.files[0];
+                // MegaPixImage constructor accepts File/Blob object.
+                var mpImg = new MegaPixImage(file);
+                // Render resized image into image element using quality option.
+                // Quality option is valid when rendering into image element.
+                var resImg = $(this).parents('td').first().find('img')[0];
+                mpImg.render(resImg, { maxWidth: 500, maxHeight: 400, quality: 0.8 });
+            });
+        });
+    })(jQuery)
+</script>
 

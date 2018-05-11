@@ -1,0 +1,55 @@
+body{
+	 background: url(../images/redcols.png) repeat;
+    background-size: 100%;
+}
+
+/*瀑布流*/
+.fall-box{
+  width: 100%;
+  margin-top: 5%;
+  padding-left: 8px;
+ 
+}
+.fall-box .item{
+   width: calc((100% - 28px)/2);
+   margin-bottom: 1.5rem;
+   background: #FFF;
+   padding: 5px;
+}
+
+.fall-box .item-img{
+	width:100% ;
+	display: block;
+}
+.item p{
+	color: #000;
+	font-size: 1.2rem;
+	margin-bottom: 0;
+	padding:5px;
+}
+.item p button{
+    border: 1px solid #000!important;
+    color: #000;
+    background: #28D4FF;
+    padding: 4px 12px;
+    border-radius: 6px;
+    outline: none;
+}
+
+.more-a{
+	display: block;
+	text-align: center;
+	margin-top: 10px;
+	padding-bottom: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+

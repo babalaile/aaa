@@ -4,6 +4,7 @@ input::-webkit-input-placeholder{text-align: center;}
 input{
     outline: 0 none!important;
 }
+
 .app-fixedIndex{
     position: fixed;
     bottom: 0px;
@@ -45,6 +46,7 @@ input{
 	 background-size: 100% 100%;
      width: 100%;
      padding: 20px;
+     padding-top: 10px;
 }
 .signForm p{
 	 margin: 0 0 18px;
@@ -55,9 +57,10 @@ input{
 }
 .awardForm{
     background:url(../images/redcols.png) no-repeat center center;
-    background-size: 100% 100%; 
+    background-size: 100%; 
     width: 100%;
     padding:20px;
+    padding-top: 10px;
 }
 .awardForm p{
     margin: 0 0 18px;
@@ -73,7 +76,7 @@ input{
 }
 #wrapper {
     position:absolute; 
-    top:280px;
+    top:320px;
     bottom:50px;
     width:100%;
     background: url(../images/2.png) no-repeat center center;
@@ -152,7 +155,7 @@ input{
 }
 .serchBtn {
     position: absolute;
-    right: 8px;
+    right: 12px;
     top: 3px;
     z-index: 9999;
     border: 1px solid #000;
@@ -239,18 +242,18 @@ input{
     left: 0%;
     margin: 0 ; 
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     color: red;
 }
 .praiseTime{
     width: 100%;
     position: absolute;
-    top: 47.5%;
+    top: 47%;
     left: 0%;
      margin: 0 ; 
     text-align: center;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
     color: red;
 }
