@@ -57,7 +57,7 @@ input{
 }
 .awardForm{
     background:url(../images/redcols.png) no-repeat center center;
-    background-size: 100%; 
+    background-size: 100% 100%; 
     width: 100%;
     padding:20px;
     padding-top: 10px;
@@ -135,7 +135,8 @@ input{
     text-align: center;
 }
 .listCON{
-    height: 95%;
+    height: auto;
+    max-height: 95%;
     width: 100%;
     position: absolute;
     top: 26px;
@@ -172,11 +173,15 @@ input{
     margin:0 5%;
 }
 .search input{
-    text-align:center;
+    text-align:left;
     border:1px solid #000!important;
     border-radius: 8px!important;
     padding-right: 90px!important;
 }
+.search input::-ms-input-placeholder{text-align: left;}
+.search input::-webkit-input-placeholder{text-align: left;}
+
+
 .enroll{
     background:#28D4FF!important;
     font-size:15px;
@@ -244,18 +249,22 @@ input{
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    color: red;
+    color: #FFF;
 }
 .praiseTime{
     width: 100%;
     position: absolute;
-    top: 47%;
+    top: 46.2%;
     left: 0%;
      margin: 0 ; 
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: bold;
-    color: red;
+    color: #FFF;
+}
+.BTNgroup{
+    text-align: center;
+    padding:0;
 }
 .BTNgroup img{
     height: 40px;
@@ -301,3 +310,56 @@ input{
     line-height: 24px;
 }
 
+.mescroll-totop {
+    z-index: 9990;
+    position: fixed;
+    right: 10px;
+    bottom: 60px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+}
+
+#toTop{
+    display: none;
+}
+
+/*瀑布流*/
+.fall-box{
+  width: 100%;
+  margin-top: -40%;
+  padding-left: 8px;
+ 
+}
+.fall-box .item{
+   width: calc((100% - 28px)/2);
+   margin-bottom: 1.5rem;
+   background: #FFF;
+   padding: 5px;
+}
+
+.fall-box .item-img{
+    width:100% ;
+    display: block;
+}
+.item p{
+    color: #000;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    padding:5px;
+}
+.item p button{
+    border: 1px solid #000!important;
+    color: #000;
+    background: #28D4FF;
+    padding: 4px 12px;
+    border-radius: 6px;
+    outline: none;
+}
+
+.more-a{
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    padding-bottom: 60px;
+}

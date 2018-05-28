@@ -29,7 +29,7 @@
                <p>
                    <div id="cf_uploader" class="wu-example webuploader">
                       <div id="thelist" class="uploader-list"></div>
-                      <div class="btns">
+                      <div class="btns" style="text-align: center;">
                           <div id="cf_picker" class="picker">选择萌宠图片</div>
                           <button id="ctlBtn" type="button" class="btn btn-default">开始上传</button>
                       </div>
@@ -46,22 +46,22 @@
                   <input type="button" class="btn btn-default" id="sendCode" value="获取验证码" style="width:40%;float:right;background:#FFF;">
                   <span  id="resetCode" class="resetCode"><span id="time"></span> 秒后重发</span>
                </p>
-              <p>
+               <p>
                   <button type="button" class="btn btn-default btn-block enroll" id="enroll">报 名</button>
-              </p>
+               </p>
           </form>
     </div>
 
     <!-- 按钮组-->
     <div class="app-fixedIndex">
        <div class="col-xs-4 BTNgroup">
-          <a href="award.html"><img src="public/images/btn1.png" alt="" width="100%" ></a>
+          <a href="award.html"><img src="public/images/btn1.png" alt=""></a>
        </div>
        <div class="col-xs-4 BTNgroup">
-           <img src="public/images/btn5.png" alt="" width="100%" data-toggle="modal" data-target="#myModal">
+           <img src="public/images/btn5.png" alt="" data-toggle="modal" data-target="#myModal">
        </div>
        <div class="col-xs-4 BTNgroup">
-           <a href="index.html"><img src="public/images/btn4.png" alt="" width="100%"></a>
+           <a href="index.html"><img src="public/images/btn4.png" alt=""></a>
        </div>
     </div>
 
@@ -185,6 +185,7 @@ $("#enroll").click(function(){
     var codeNum = $("#codePhone").val();
     var petName= $("#petName").val();
     var vedioAdr= $("#vedioAdr").val();
+    var petImg = $("#fileList .file-item").length;
     
     var phoneCode =888888;  //获取到的验证码
 
@@ -195,6 +196,9 @@ $("#enroll").click(function(){
     }
     else if(petName==""){
       alert("请输入您的宠物名称")
+    }
+    else if(petImg==0){
+      alert("请上传您的萌宠照片")
     }
     else if(vedioAdr==""){
       alert("请输入您的短视频地址")
@@ -207,8 +211,7 @@ $("#enroll").click(function(){
     }
     else{
 
-     $(":text").val("");
-
+      $("#ctlBtn").click();
       $(".hidefloor").show();
       $(".signSucc").show();
      

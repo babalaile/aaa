@@ -13,7 +13,7 @@
 <body>
     <div class="container-fluid" style="padding:0;padding-bottom:46px;">
           <div style="position: relative;">
-              <img src="public/images/kaijbj.png" alt="" width="100%" >
+              <img src="public/images/kaijbj.png" alt="" width="100%" id="kaijbj">
           </div>
 
           <!-- 登录表单 -->
@@ -35,13 +35,13 @@
     <!-- 按钮组-->
     <div class="app-fixedIndex">
        <div class="col-xs-4 BTNgroup">
-          <img src="public/images/btn1.png" alt="" width="100%" >
+          <img src="public/images/btn1.png" alt="">
        </div>
        <div class="col-xs-4 BTNgroup">
-           <a href="signUp.html"><img src="public/images/btn2.png" alt="" width="100%" ></a>
+           <a href="signUp.html"><img src="public/images/btn2.png" alt=""></a>
        </div>
        <div class="col-xs-4 BTNgroup">
-           <a href="http://61.183.0.29:8181/cfhd/offerIndex.htm"><img src="public/images/btn3.png" alt="" width="100%" ></a>
+           <a href="http://61.183.0.29:8181/cfhd/offerIndex.htm"><img src="public/images/btn3.png" alt=""></a>
        </div>
     </div>
 
@@ -75,6 +75,20 @@
 <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="public/js/alert.js"></script>
+
+<script>
+
+var h1 = $("#kaijbj").height();
+
+var h2 = window.innerHeight;
+
+var H = h2-h1;
+
+$(".awardForm").css("min-height",H-50+"px")
+
+</script>
+
+
 <script>
  
 var isPhone = 1;
