@@ -14,6 +14,11 @@
 <body>
     
     <div class="container-fluid" style="padding:0;" >
+
+
+     <a href="images/wxlogo.png" id="wxlogo" style="display:none;"></a>
+
+     
          <div style="position: relative;">
              <img src="public/images/yp.png" alt="" class="bannerImg" >
              <div class="hideBuy" id="hideBuy"></div>
@@ -25,13 +30,31 @@
 
 <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/js/share.js"></script>
 <script type="text/javascript" src="public/js/alert.js"></script>
+
+<script type="text/javascript">
+var loc = location.href,
+    url = document.getElementById("wxlogo").href,
+    shareLink = loc,
+    desc = "一键领取60G，央视世界杯免费看，移动王卡1天1元，购机最高送5000元话费。",
+    title = "湖北移动毕业季大礼包";
+   data_init(url,shareLink,desc,title)
+</script>
+
 
 <script>
    $("#hideBuy").click(function(){
 
       window.location.href="http://wysc.hb.189.cn/getProductDetailPage.htm?prodInstanceId=200705_11147&mallId=gxtqk&pcOrWap=7001&uid=&mallPCWapType=common"
-    
 
    })
 </script>
+
+
+
+
+
+
+
+
