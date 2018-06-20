@@ -1,0 +1,199 @@
+body{
+	color: #333;
+	background: #F8F8F8!important;
+}
+input[type=radio]{
+   vertical-align: -1px;margin-right: 1px;
+}
+
+.orderMsg{
+	margin-bottom: 0;
+}
+.orderMsg input{
+    border: 0;
+    outline: none;
+    font-size: 15px;
+}
+.orderMsg .list-group-item{
+	border:0;
+	margin-bottom:0;
+	border-bottom: 1px solid #ddd;
+	padding: 0 15px!important;
+}
+
+.orderMsg li span{
+	font-size: 15px;
+}
+.titleMsg{
+    background: #F8F8F8;
+    padding: 15px 0 10px 15px;
+    margin-bottom: 0;
+}
+.Rimg{
+	position: absolute;
+	top: 12px;
+	right: 15px;
+}
+.Rimg img{
+	width: 10px;
+}
+.canUse{
+	padding: 0px;
+	background: #FFF;
+}
+.media{
+	border-bottom: 1px solid #eee;
+    position: relative;
+    margin:0;
+}
+.media h4{
+	line-height: 18px;
+    font-size: 14px;
+}
+.media p{
+	 margin-bottom:0px;
+}
+.CHECK{
+	padding: 0;
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.CHECK img{
+	margin:0 auto;
+}
+.CHECK .discheck,.CHECK .check{
+	width: 100%;
+	text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.media-body{
+	width: 60%;
+    float: left;
+    margin-left: 22%;
+    padding: 10px;
+    border-right: 1px dashed #ddd;
+}
+.media-left{
+	float: left;
+}
+.media-body .price{
+	font-size: 16px;
+	color: #FF5000;
+}
+.custom{
+	text-align: center;
+	margin:0;
+	padding-bottom: 7px;
+}
+.custom a{
+	color: #333;
+	text-decoration: none;
+}
+.check{
+	display: none;
+}
+.orderMsg li p{
+	padding-top: 10px;
+}
+
+button.closebtn{
+    position: absolute;
+    top: 400px;
+    LEFT: 0%;
+    OPACITY: 1;
+    width: 100%;
+    outline: 0 none!important;
+    background: none;
+    border: 0;
+}
+.https .modal-dialog{
+	width: 80%;
+    margin-left: 10%;
+}
+.modal-backdrop.in{
+	opacity: 0.8;
+}
+.areaLogo{
+	background:#FFF;
+	position: relative;
+	height: 36px;
+	margin-bottom: 0;
+	border-bottom: 1px solid #f2ede9;
+}
+.areaLogo>img{
+    height: 26px;
+    margin: 0 auto;
+    display: block;
+    padding-top: 10px;
+}
+.areaLogo .logoAdd{
+	position: absolute;
+    top: 0px;
+    right: 4px;
+    background: url(../images/add.png) no-repeat left center;
+    background-size: 20px;
+    padding-left: 22px;
+    line-height: 36px;
+}
+ .media-left{
+ 	padding:0;
+    width: 20%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #FF7600;
+}
+.media-left p{
+	font-size: 18px;
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+} 
+.read{
+	padding: 4px 10px;
+}
+.btn-lg{
+	color: #FFF!important;
+    border-radius: 0!important;
+    background:#004893;
+    border:0 none!important;
+}
+.needknow{
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+}
+.needknow p{
+	font-size: 16px;
+	color: #004893;
+}
+.needknow img{
+	width: 26px;
+}
+.knowDetail{
+	display: none;
+}
+.onKnow img{
+    transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.https {
+    top: 10%;
+}
