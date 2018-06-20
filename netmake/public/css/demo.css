@@ -78,7 +78,7 @@ input[type=radio]{
 	width: 60%;
     float: left;
     margin-left: 22%;
-    padding: 10px;
+    padding: 10px 0;
     border-right: 1px dashed #ddd;
 }
 .media-left{
