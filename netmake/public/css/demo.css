@@ -78,7 +78,7 @@ input[type=radio]{
 	width: 60%;
     float: left;
     margin-left: 22%;
-    padding: 10px 0;
+    padding: 10px 1px;
     border-right: 1px dashed #ddd;
 }
 .media-left{
@@ -178,11 +178,11 @@ button.closebtn{
 	margin-top: 10px;
 }
 .needknow p{
-	font-size: 16px;
+	font-size: 14px;
 	color: #004893;
 }
 .needknow img{
-	width: 26px;
+	width: 20px;
 }
 .knowDetail{
 	display: none;
@@ -196,4 +196,34 @@ button.closebtn{
 }
 .https {
     top: 10%;
+}
+
+label {
+    display: inline;
+    margin:0;
+    font-weight: normal;
+}
+ .regular-checkbox {
+    display: none;
+}
+.regular-checkbox + label {
+    background-color: #fffff;
+    border: 1px solid #004893;
+    padding: 6px;
+    border-radius:50%;
+    display: inline-block;
+    position: relative;
+}
+.regular-checkbox:checked + label {
+    background-color: #004893;
+    border: 1px solid #004893;
+    color: #99a1a7;
+}
+.regular-checkbox:checked + label:after {
+    content: '\2714';
+    font-size: 12px;
+    position: absolute;
+    top: -3px;
+    left: 1px;
+    color: #ffffff;
 }

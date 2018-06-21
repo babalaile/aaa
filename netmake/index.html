@@ -24,9 +24,9 @@
  
          <form action="" method="post" id="orderinfo" name="orderinfo">
 	              <div class="canUse">
-    	                <ul class="media-list">
+    	                <ul class="media-list" style="margin-bottom:5px;">
                 			  
-    			           </ul>
+    			        </ul>
 	              </div>
 
                   <div class="tableItem">
@@ -45,10 +45,10 @@
                 </div>
             </form>
             <div class="read">
-                <label for="agree">
-                    <input type="checkbox" id="agree" name="agree"> 提交后会进行实名校验，同意
-                </label>
-                <span style="color:#004893;" id="openHttp">《芝麻信用授权协议》</span>
+		         <input type="checkbox" id="agree" name="agree" class="regular-checkbox" />
+		         <label for="agree"></label> 
+		         <label for="agree">提交后会进行实名校验，同意</label>
+		         <span style="color:#004893;" id="openHttp">《芝麻信用授权协议》</span>
             </div>
             <button type="button" class="btn btn-lg btn-block" id="confirmOrder">马上预约</button>
 
@@ -174,20 +174,20 @@
 
                  { 
                      "id":"001",
-                     "type":"随选宽带1",
-                     "size":"21M",
-                     "msg":"浙江电信20M3个月浙江电信20M3个月", 
-                     "oldprice":"400.00",
-                     "newprice":"300.00",
+                     "type":"随选宽带",
+                     "size":"20M",
+                     "msg":"预存100元免费布放天翼网关，月最高提速100M", 
+                     "oldprice":"499",
+                     "newprice":"460",
                    
                   },
                   { 
-                     "id":"001",
-                     "type":"随选宽带2",
-                     "size":"22M",
-                     "msg":"浙江电信20M3个月浙江电信20M3个月", 
-                     "oldprice":"400.00",
-                     "newprice":"300.00",
+                     "id":"002",
+                     "type":"随选宽带",
+                     "size":"50M",
+                     "msg":"预存200元免费布放天翼网关，月最高提速100M", 
+                     "oldprice":"799",
+                     "newprice":"519",
                   }
               ]
 
@@ -268,7 +268,6 @@ $(".media").click(function(){
        }
     }
 
-
 if($("input[name=agree]:checked").length<1){
         alert('请先阅读"芝麻信用授权协议"');
         ok6 = false; 
@@ -285,7 +284,7 @@ if($("input[name=agree]:checked").length<1){
 		 ok4= true;
 	}
 	if($("#phone").val()==""){
-		 alert("请输入联系电话！");
+		 alert("请输入手机号！");
 		 ok3 = false;
 	}
 	else{
@@ -293,17 +292,17 @@ if($("input[name=agree]:checked").length<1){
 	}
 	if(p.hasClass("active")){
           ok5= true;
-      }
-      else{
-          alert("请选择宽带类型！");
-          ok5 = false;
-      }
+  }
+  else{
+      alert("请选择宽带类型！");
+      ok5 = false;
+  }
 
 //全为真执行
 
  if(ok3&&ok4&&ok5&&ok6){
 
-    alert("预约")
+    alert(id)
    
     }  
  })
