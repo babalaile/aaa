@@ -32,7 +32,7 @@
                   <div class="tableItem">
                     <ul class="orderMsg list-group">
                         <li class="list-group-item">
-                          <p><span style="width:30%;display:inline-block;">联系方式：</span><input type="text" id="phone" style="text-align:right;width:70%;" placeholder="请输入手机号码" maxlength="11"></p>
+                          <p><span style="width:30%;display:inline-block;">联系方式：</span><input type="text" id="phone" style="text-align:right;width:70%;" placeholder="请输入手机号码【必填】" maxlength="11"></p>
                         </li>
                         <li class="list-group-item">
                            <p><span style="width:30%;display:inline-block;">安装地址：</span><input type="text" id="city-picker" style="text-align:right;width:70%;"> 
@@ -68,7 +68,6 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-     
         <h4 class="modal-title" align="center">芝麻信用授权协议</h4>
       </div>
       <div class="modal-body" style="height: 300px; overflow: auto;">
@@ -187,7 +186,7 @@
                      "id":"bbb",
                      "type":"随选宽带",
                      "size":"50M",
-                     "msg":"预存200元免费布放天翼网关，月最高提速100M", 
+                     "msg":"预存20元免费布放天翼网关，月最高提速100M", 
                      "oldprice":"799",
                      "newprice":"519",
                   }
@@ -304,7 +303,7 @@ if($(".read").attr("value")==1){
 		 ok3= true;
 	}
 	if(p.hasClass("active")){
-          ok5= true;
+     ok5= true;
   }
   else{
       alert("请选择宽带类型！");
