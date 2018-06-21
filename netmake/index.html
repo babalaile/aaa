@@ -44,11 +44,13 @@
                      </ul>
                 </div>
             </form>
-            <div class="read">
-		         <input type="checkbox" id="agree" name="agree" class="regular-checkbox" />
-		         <label for="agree"></label> 
-		         <label for="agree">提交后会进行实名校验，同意</label>
-		         <span style="color:#004893;" id="openHttp">《芝麻信用授权协议》</span>
+            <div class="read" value="1">
+  		         <input type="checkbox" id="agree" name="agree" class="regular-checkbox" />
+  		         <label for="agree"></label> 
+               <img src="public/images/discheck.png" alt="" width="20" class="discheckImg">
+               <img src="public/images/checked.png" alt="" width="20" class="checkedImg">
+  		          提交后会进行实名校验，同意
+  		         <span style="color:#004893;" id="openHttp">《芝麻信用授权协议》</span>
             </div>
             <button type="button" class="btn btn-lg btn-block" id="confirmOrder">马上预约</button>
 
@@ -173,7 +175,7 @@
     var json =  [
 
                  { 
-                     "id":"001",
+                     "id":"aaa",
                      "type":"随选宽带",
                      "size":"20M",
                      "msg":"预存100元免费布放天翼网关，月最高提速100M", 
@@ -182,7 +184,7 @@
                    
                   },
                   { 
-                     "id":"002",
+                     "id":"bbb",
                      "type":"随选宽带",
                      "size":"50M",
                      "msg":"预存200元免费布放天翼网关，月最高提速100M", 
@@ -247,28 +249,39 @@ $(".media").click(function(){
     $('#myModal').modal('show');
  })
 
+$(".read").click(function(){
+  
+  var val = $(this).attr("value");
+
+  if (val ==1){
+          $(this).attr("value","2");
+          $(".discheckImg").hide();
+          $(".checkedImg").show();
+          return ;
+        }
+
+    if (val ==2){
+          $(this).attr("value","1");
+          $(".checkedImg").hide();
+          $(".discheckImg").show();
+        }
+})
+
 </script>
 
 <script>
-
  //确认下单
 
  $("#confirmOrder").click(function(){
-
     var p=$(".media")
-  
-   for(var i = 0;i <p.length;i++){
-
+    for(var i = 0;i <p.length;i++){
   　　if(p[i].className=='media active'){
-
        var  obj = p[i]
-
        var id =  obj.getAttribute("id")
-    
        }
     }
 
-if($("input[name=agree]:checked").length<1){
+if($(".read").attr("value")==1){
         alert('请先阅读"芝麻信用授权协议"');
         ok6 = false; 
     }
