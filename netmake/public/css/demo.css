@@ -5,7 +5,7 @@ body{
 input[type=radio]{
    vertical-align: -1px;margin-right: 1px;
 }
-
+input[type=button],input[type=text],input[type=checkbox]{-webkit-appearance:none;outline:none}
 .orderMsg{
 	margin-bottom: 0;
 }
