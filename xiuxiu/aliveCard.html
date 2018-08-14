@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no"/>
+	<link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/new.css" />
+
+  <title>订单确认</title>
+
+</head>
+<body>
+   <div class="container-fluid" >
+        <div class="bcn">
+            <ul class="pager">
+                <li class="previous"><a href="javascript:window.history.go(-1);"><span class="glyphicon glyphicon-chevron-left"></span> 返回</a></li>
+                <li class="center-block">订单确认 <small></small></li>
+                <li class="choseTopAdd">
+                    <img src="public/images/new/add.png" alt="" width="20">  
+                     <div class="areaList">
+                      <div id="selectBox" class="btn-group">
+                         <div class="center-block dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <span class="txt"></span>
+                         </div>
+                         <ul>
+                            <li></li>
+                         </ul>
+                      </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+       
+       <div class="base blockBox">
+            <div class="tit01">订单信息：</div>
+            <div class="text">
+                <table width="100%">
+                    <tbody>
+                        <tr><td width="90" height="35" align="right">套餐名称：</td><td class="offerName">大王卡19元</td></tr>
+                        <tr><td height="35" align="right">所选号码：</td><td class="offerArea">13111132323</td></tr>
+                        <tr><td height="35" align="right">归属地区：</td><td class="offerArea">武汉市</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+         <div class="base blockBox card">
+            <div class="tit01">激活卡片：</div>
+                <form action="" id="offerForm" style="margin-top: 12px;">
+                    <div class="form-group">
+                      <input type="text" name="ICCID" id="ICCID" class="form-control" placeholder="输入ICCID码(仅数字)" onkeyup="value=value.replace(/[\W]/g,'')" onblur="testID()">
+                    </div>
+                    <div class="form-group">
+                      <input type="password" name="PUK" id="PUK" class="form-control" placeholder="输入PUK码" onblur="testPUK()">
+                    </div>
+                     <p id="errMsg" style="color:red;text-align: center;"></p>
+
+                    <div class="form-group">
+                         <input type="text" class="form-control" id="Phone"  maxlength="11" placeholder="输入联系手机电话">
+                    </div>
+
+                    <div class="inputItem">
+                      <div class="agreement" style="text-align: center;padding: 20px 0px;">
+                          <div class="read">
+                              <label>
+                                  <input type="radio" id="agree" value="" onclick="javascript:this.value='ok';"> 我已经阅读同意
+                              </label>
+                              <a href="javascript:void(0);"><span style="color: red;" onclick="$('input[name=agree]').prop('checked',true)">中国电信协议</span></a>
+                          </div>
+                      </div>
+                  </div>
+                  <p class="nextStip"><button type="button" class="btn" >下一步</button></p>
+              </form>
+        </div>
+
+        <div class="footer">
+            <div class="left"><span id="custom">在线客服</span></div>
+            <div class="right"><span id="orderSearch">订单查询</span></div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/js/common.js"></script>
+<script type="text/javascript" src="public/js/choseArea.js"></script>
+<script type="text/javascript" src="public/js/sideKeFu.js"></script>
+
+<script type="text/javascript">
+        $(document).ready(function(){
+            $.sideKeFu();
+        });
+</script>
+
+<script>
+
+  $('#selectBox').first().find('div .txt').html("荆门市");
+
+   var ok1=false;ok2=false;
+
+   var  iccid = $("#ICCID")
+   var  puk = $("#PUK")
+
+  window.onload=function(){
+    iccid.focus();
+  }
+
+    function testID(){
+        if(iccid.val()==''){
+             $("#errMsg").html('请输入ICCID码');
+             iccid.focus();
+             return ok1
+        }
+        else{
+            ok1 = true;
+            $("#errMsg").html('')
+            puk.focus();
+            if(ok2){
+              search()
+            }
+        }
+     }
+     function testPUK(){
+        if(puk.val()==''){
+           $("#errMsg").html('请输入PUK码')
+             puk.focus();
+             return ok2
+        }
+        else{
+            ok2 = true;
+            $("#errMsg").html('')
+            if(ok1){
+              search()
+            }
+        }
+     }
+
+     function search(){
+      console.log("查询")
+        //查询错误显示
+        var errHtml = ' *该卡板为<span>武汉</span>专属卡板 <a href="">这里</a> 选择<span>武汉</span>专属套餐 '
+          $("#errMsg").html(errHtml)
+     }
+
+</script>
+
+<script>
+  $("#custom").click(function(){
+  	 alert("客服")
+  })
+
+   $("#orderSearch").click(function(){
+  	 alert("订单查询")
+  })
+
+</script>
+
+<!-- 下一步 -->
+<script>
+
+   $('.nextStip button').click(function(){
+
+        var ok3 = false; ok4 = false; 
+        var formObj=$("#offerForm");
+        var phoneNumber = $("#Phone").val();
+        var patt = /^1\d{10}$/;
+
+          if(phoneNumber==''){
+              alert('请输入联系手机号');
+              return  ok3;
+          }
+          else if(!patt.test(phoneNumber)) {  
+              alert('请填写正确的手机号');   
+              return  ok3;
+          }else{
+              ok3 = true;
+          }
+          if($("#agree").val()!="ok"){
+              alert('请先阅读"中国电信协议"');
+              return  ok4;
+          }else{
+               ok4 = true; 
+          }
+
+        if(ok3&&ok4){
+             alert("下一步")
+         }
+   
+      })
+
+</script>
+

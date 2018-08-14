@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+	  <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+	  <link rel="stylesheet" type="text/css" href="public/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="public/webuploader/webuploader.css">
+    <link rel="stylesheet" type="text/css" href="public/css/new.css" />
+  <title>实名认证</title>
+
+</head>
+<body>
+   <div class="container-fluid">
+        <div class="bcn">
+            <ul class="pager">
+               <li class="previous"><a href="javascript:window.history.go(-1);"><span class="glyphicon glyphicon-chevron-left"></span> 返回</a></li>
+                <li class="center-block">实名认证 <small></small></li>
+                 <li class="choseTopAdd">
+                    <img src="public/images/new/add.png" alt="" width="20">  
+                     <div class="areaList">
+                      <div id="selectBox" class="btn-group">
+                         <div class="center-block dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <span class="txt"></span>
+                         </div>
+                         <ul>
+                            <li></li>
+                         </ul>
+                      </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+       
+         <div class="base blockBox card">
+            <div class="tit01">实名认证：</div>
+                <form action="" id="pattForm" style="margin-top: 12px;">
+                    <div class="form-group">
+                      <input type="text" name="" id="Name" class="form-control" placeholder="输入姓名" onblur="testname()">
+                    </div>
+                    <div class="form-group">
+                      <input type="text" name="" id="idCard" class="form-control" placeholder="输入身份证号" onblur="testcard()">
+                    </div>
+                     <p id="errMsg" style="color:red;text-align: center;"></p>
+                     <p class="patSuccess"><span>验证成功</span></p>
+                     <p class="patFail"><span>验证失败</span></p>
+
+              <!--身份证正面照-->    
+              <div id="cf_uploader1" class="wu-example webuploader">
+                
+                  <div class="thelist" class="uploader-list"></div>
+                  <div class="btns">
+                      <div id="cf_picker1" class="picker">
+                          <img src="public/images/new/cardface.png" alt="" width="100%">
+                      </div>
+                   <!--    <p><button id="ctlBtn" type="button" class="btn btn-default">开始上传</button> </p> -->
+                  </div>
+                  <div class="fileList"></div>
+                  <input type="hidden" name="" id="" value="">
+              </div>
+
+             <!--身份证反面照-->    
+              <div id="cf_uploader2" class="wu-example webuploader">
+                
+                  <div class="thelist" class="uploader-list"></div>
+                  <div class="btns">
+                      <div id="cf_picker2" class="picker">
+                          <img src="public/images/new/cardback.png" alt="" width="100%">
+                      </div>
+                  </div>
+                  <div class="fileList"></div>
+                  <input type="hidden" name="" id="" value="">
+              </div>
+
+              <!--免冠照片-->    
+              <div id="cf_uploader3" class="wu-example webuploader">
+                
+                  <div class="thelist" class="uploader-list"></div>
+                  <div class="btns">
+                      <div id="cf_picker3" class="picker">
+                          <img src="public/images/new/bareheaded.png" alt="" width="100%">
+                      </div>
+                  </div>
+                  <div class="fileList"></div>
+                  <input type="hidden" name="identityCardFrontSrc" id="" value="">
+              </div>
+
+            </form>
+             <p class="nextStip"><button type="button" class="btn" id="ctlBtn" >下一步</button></p>
+        </div>
+
+        <div class="footer">
+            <div class="left"><span id="custom">在线客服</span></div>
+            <div class="right"><span id="orderSearch">订单查询</span></div>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/webuploader/webuploader.js"></script>
+<script type="text/javascript" src="public/js/common.js"></script>
+<script type="text/javascript" src="public/js/choseArea.js"></script>
+
+
+<!-- 姓名身份证查询 -->
+<script>
+
+  $('#selectBox').first().find('div .txt').html("荆门市");
+
+ 
+   var ok1=false;ok2=false;
+   var Name = $("#Name")
+   var card = $("#idCard")
+
+  window.onload=function(){
+    Name.focus();
+  }
+
+    function testname(){
+        if(Name.val()==''){
+            $("#errMsg").html('请输入姓名');
+            Name.focus();
+            return ok1
+        }
+        else{
+            ok1 = true;
+            $("#errMsg").html('');
+            card.focus();
+            if(ok2){
+              search()
+            }
+        }
+     }
+     function testcard(){
+        if(card.val()==''){
+             $("#errMsg").html('请输入身份证号');
+             card.focus();
+             return ok2
+        }
+        else{
+            ok2 = true;
+            $("#errMsg").html('');
+            if(ok1){
+              search()
+            }
+        }
+     }
+
+   function search(){
+      var status = 1;
+      if(status ==1){
+        $(".patSuccess").show();
+      }
+      else{
+        $(".patFail").show();
+      }
+   }
+
+</script>
+
+<script>
+  $("#custom").click(function(){
+  	 alert("客服")
+  })
+
+   $("#orderSearch").click(function(){
+  	 alert("订单查询")
+  })
+
+</script>
+
+<script type="text/javascript">
+    (function($){
+        $(document).ready(function(){
+
+           $("#cf_uploader1").webUploads({
+               fileNumLimit:1,// 图片张数
+               pick:'#cf_picker1',
+               compress:{
+                   width: 800,
+                   height: 600,
+                   quality: 50,// 图片质量，只有type为`image/jpeg`的时候才有效。
+                   allowMagnify: false,// 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+                   crop: false,// 是否允许裁剪。
+                   preserveHeaders: true,// 是否保留头部meta信息。
+                   noCompressIfLarger: false,// 如果发现压缩后文件大小比原来还大，则使用原来图片 此属性可能会影响图片自动纠正功能
+                   compressSize: 0// 单位字节，如果图片大小小于此值，不会采用压缩。
+               },
+               uploadCompleteCallBack:function(fileListObj){
+                   var imgs=fileListObj.find('img');
+                   if(imgs.length>0){
+                       fileListObj.parent().find('input[type=hidden]').val(imgs.first().attr('data-src'));
+                   }else{
+                       fileListObj.parent().find('input[type=hidden]').val('');
+                   }
+               }
+           })
+        });
+    })(jQuery)
+</script>
+
+<script type="text/javascript">
+    (function($){
+        $(document).ready(function(){
+
+           $("#cf_uploader2").webUploads({
+               fileNumLimit:1,// 图片张数
+               pick:'#cf_picker2',
+               compress:{
+                   width: 800,
+                   height: 600,
+                   quality: 50,// 图片质量，只有type为`image/jpeg`的时候才有效。
+                   allowMagnify: false,// 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+                   crop: false,// 是否允许裁剪。
+                   preserveHeaders: true,// 是否保留头部meta信息。
+                   noCompressIfLarger: false,// 如果发现压缩后文件大小比原来还大，则使用原来图片 此属性可能会影响图片自动纠正功能
+                   compressSize: 0// 单位字节，如果图片大小小于此值，不会采用压缩。
+               },
+               uploadCompleteCallBack:function(fileListObj){
+                   var imgs=fileListObj.find('img');
+                   if(imgs.length>0){
+                       fileListObj.parent().find('input[type=hidden]').val(imgs.first().attr('data-src'));
+                   }else{
+                       fileListObj.parent().find('input[type=hidden]').val('');
+                   }
+               }
+           })
+
+        });
+    })(jQuery)
+</script>
+
+<script type="text/javascript">
+    (function($){
+        $(document).ready(function(){
+
+           $("#cf_uploader3").webUploads({
+               fileNumLimit:1,// 图片张数
+               pick:'#cf_picker3',
+               compress:{
+                   width: 800,
+                   height: 600,
+                   quality: 50,// 图片质量，只有type为`image/jpeg`的时候才有效。
+                   allowMagnify: false,// 是否允许放大，如果想要生成小图的时候不失真，此选项应该设置为false.
+                   crop: false,// 是否允许裁剪。
+                   preserveHeaders: true,// 是否保留头部meta信息。
+                   noCompressIfLarger: false,// 如果发现压缩后文件大小比原来还大，则使用原来图片 此属性可能会影响图片自动纠正功能
+                   compressSize: 0// 单位字节，如果图片大小小于此值，不会采用压缩。
+               },
+               uploadCompleteCallBack:function(fileListObj){
+                   var imgs=fileListObj.find('img');
+                   if(imgs.length>0){
+                       fileListObj.parent().find('input[type=hidden]').val(imgs.first().attr('data-src'));
+                   }else{
+                       fileListObj.parent().find('input[type=hidden]').val('');
+                   }
+               }
+           })
+
+        });
+  })(jQuery)
+
+</script>
+
+<!-- <script>
+   $('#ctlBtn').click(function(){
+
+      var L1 = $("#cf_uploader1").find(".fileList>div").length;
+      var L2 = $("#cf_uploader2").find(".fileList>div").length;
+      var L3 = $("#cf_uploader3").find(".fileList>div").length;
+
+       if( $('.patFail').css('display')!==('none') ){
+           alert("身份信息有误");
+           return false
+       }
+       else if(L1==0){
+           alert("请上传身份证正面照");
+           return false
+       }
+       else if(L2==0){
+           alert("请上传身份证反面照");
+           return false
+       }
+       else if(L3==0){
+           alert("请上传免冠照");
+           return false
+       }
+       else{
+          alert("下一步")
+       }
+
+   })
+
+</script> -->
+
+
+
+

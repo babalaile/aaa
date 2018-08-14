@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="public/css/new.css" />
+  <title>咻咻卡</title>
+
+</head>
+<body>
+   <div class="container-fluid">
+
+        <div class="bcn">
+            <ul class="pager">
+                <li class="center-block">天翼不限量99元 <small></small></li>
+                <li class="choseTopAdd">
+                    <img src="public/images/new/add.png" alt="" width="20">  
+                     <div class="areaList">
+                      <div id="selectBox" class="btn-group">
+                         <div class="center-block dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                            <span class="txt"></span>
+                         </div>
+                         <ul>
+                            <li></li>
+                         </ul>
+                      </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <p class="nextStip"><button type="button" class="btn">下一步</button></p>
+
+        <footer class="indexFoot">
+             <div class="left"><span id="">这里显示套餐内容</span></div>
+             <div class="right"><span id="orderSearch">订单查询</span></div>
+             <div class="center"><span id="custom">在线客服</span></div>
+        </footer>
+    </div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/js/common.js"></script>
+<script type="text/javascript" src="public/js/choseArea.js"></script>
+
+<script>
+
+  $('#selectBox').first().find('div .txt').html("荆门市");
+
+
+  $("#custom").click(function(){
+  	 alert("客服")
+  })
+
+   $("#orderSearch").click(function(){
+  	 alert("订单查询")
+  })
+</script>
+
+

@@ -1,0 +1,204 @@
+.container-fluid{
+      padding-bottom: 50px;
+  }
+
+.container-fluid{padding-left: 0;padding-right: 0; font-size: 14px;}
+.container-fluid .bcn{background-color:#2c2c2c; height: 46px;}
+.container-fluid .bcn .pager a{background-color:#DD504C;padding: 12.7px;}
+.container-fluid .bcn .pager .center-block{ font-size: 16px;line-height: 46px;}
+.footer{
+  opacity: 1;
+}
+.footer div{
+   font-size: 15px;
+}
+.footer .right{width: 50%;background:#DD504C;}
+.footer .left{width: 50%;background: #2c2c2c;text-align: center;}
+.base, .intro{margin-top: 10px;}
+.tit01 {font-size:16px;font-weight:bold; }
+
+.logoAdd{
+		  color: #fff;
+	    background: url(../images/new/down.png) no-repeat right center;
+	    background-size: 18px;
+	    padding-right: 22px;
+	    line-height: 36px;
+	}
+	.choseTopAdd{
+	    position: absolute;
+	    display: block;
+	    right: 0px;
+	    top: 0px;
+	    line-height: 46px;
+      padding-right: 4px; 
+	}
+	.pager li>span{
+        padding: 4px 8px;
+        border:none; 
+        border-radius: 4px;
+	}
+  .indexFoot{
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 100%;
+ }
+ .indexFoot>div{
+     display: inline-block;
+    box-sizing: border-box;
+    color: #fff;
+    float: left;
+    font-size: 15px;
+    height: 50px;
+    line-height: 40px;
+    padding: 5px;
+    text-align: center;
+ }
+  .indexFoot .left{
+      display: inline-block;
+      width: 40%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      background: #2c2c2c;
+  }
+  .indexFoot .center{
+      display: inline-block;
+      width: 30%;
+      background: #DD504C;
+  }
+  .indexFoot .right{
+      display: inline-block;
+      width: 30%;
+      background: #DD504C;
+  }
+  .indexFoot .center>span{
+       background: url(../images/new/kefu.png) no-repeat left center;
+       background-size: 22px;
+       padding-left: 24px;
+    }
+  .indexFoot .right>span{
+       background: url(../images/new/search.png) no-repeat left center;
+       background-size: 22px;
+       padding-left: 24px;
+    }
+   .footer .left>span{
+       background: url(../images/new/kefu.png) no-repeat left center;
+       background-size: 22px;
+       padding-left: 26px;
+    }
+  .footer .right>span{
+       background: url(../images/new/search.png) no-repeat left center;
+       background-size: 22px;
+       padding-left: 26px;
+    }
+  .phoneNum{
+      display: inline-block;
+      float: left;
+      width: 35%;
+      margin-top: 10px;
+      text-align: center;
+  }
+ .card input[type=text], .card input[type=password]{
+     border-radius: 30px!important;
+     font-size: 14px;
+     text-align: center;
+     width: 90%;
+     margin-left: 5%;
+ }
+  .nextStip {
+     margin-top: 10px;
+     text-align:center;
+  }
+  .nextStip button{
+     background:#DD504C!important;
+     color: #FFF!important;
+     padding: 8px 50px;
+     border-radius: 30px;
+     outline: none!important;
+}
+.patSuccess , .patFail{
+    text-align: center;
+    display: none;
+}
+
+.patSuccess>span{
+     background: url(../images/new/success.png) no-repeat left center;
+     background-size: 22px;
+     padding-left: 24px;
+}
+.patFail>span{
+     background: url(../images/new/fail.png) no-repeat left center;
+     background-size: 22px;
+     padding-left: 24px;
+}
+.webuploader{
+    display: inline;
+}
+.webuploader-pick{
+   background: none;
+   padding: 0;
+}
+.webuploader-pick-hover{
+   background: none;
+}
+.webuploader .picker{
+    margin: 0 auto;
+}
+.thumbnail{
+    margin-bottom: 0;
+}
+.weui-picker-container, .weui-picker-overlay{
+    z-index: 99999999;
+}
+.btns{
+   text-align: center;
+}
+.webuploader .file-item .close{
+    font-size: 20px;
+    color: #000;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    right: 0px;
+    top: 0px;
+}
+
+.weui-picker-modal .col-city .picker-item{
+     text-align: left;
+}
+#selectBox{
+     width: 100%;
+}
+.areaList{
+     display: inline-block;
+}
+#selectBox button{
+  padding: 0;
+}
+#selectBox .dropdown-menu {
+    height: 20rem;
+    overflow-y: auto;
+    width: 14rem;
+    right: 0;
+    left: auto;
+}
+#selectBox .dropdown-menu li{
+    width: 100%;
+    line-height: 2;
+    margin-right:0;
+}
+#selectBox .txt{
+    background: url(../images/new/down.png) no-repeat right center;
+    background-size: 18px;
+    padding-right: 22px;
+}
+.sideKeFu{
+    position: fixed;
+    right: 0px;
+    top: 20%;
+    z-index: 8888888;
+    width: 4rem;
+}
+
+
