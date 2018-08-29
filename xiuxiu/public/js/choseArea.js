@@ -7,6 +7,11 @@
       window.location.href = 'orderQueryPageNew.htm';
   });
   
+   function showArea(){
+        $(".dropdown-menu").show();
+        $(".backdrop").show();
+  }       
+
   var areaGroup={};
     areaGroup["027"]="武汉市";
     areaGroup["0714"]="黄石市";
@@ -34,9 +39,11 @@
   $(".areaList ul").on('click','li',function(){
       var thisDataVal=$(this).attr('data-val');
       var uid = $('#uid').val();
-      $(".dropdown-menu").hide();
-    	$(".dropdown-backdrop").hide();
-    
+
+       $("#selectBox .dropdown-menu").hide();
+       $("#selectBox .backdrop").hide();
+     
+    //  window.location.href="indexNew.htm?areaCode="+thisDataVal+"&uid="+uid;
   });
   
   function areaTxt(areaId){
