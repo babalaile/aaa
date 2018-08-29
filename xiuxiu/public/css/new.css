@@ -107,8 +107,9 @@
      margin-left: 5%;
  }
   .nextStip {
-     margin-top: 10px;
+     margin-top: 20px;
      text-align:center;
+     margin-bottom: 20px;
   }
   .nextStip button{
      background:#DD504C!important;
@@ -177,14 +178,14 @@
   padding: 0;
 }
 #selectBox .dropdown-menu {
-    height: 20rem;
-    overflow-y: auto;
-    width: 14rem;
-    right: 0;
-    left: auto;
+     left: 0;
+    position: fixed;
+    top: 50px;
+    z-index: 88888888;
+
 }
 #selectBox .dropdown-menu li{
-    width: 100%;
+    width: 50%;
     line-height: 2;
     margin-right:0;
 }
@@ -193,12 +194,8 @@
     background-size: 18px;
     padding-right: 22px;
 }
-.sideKeFu{
-    position: fixed;
-    right: 0px;
-    top: 20%;
-    z-index: 8888888;
-    width: 4rem;
+.dropdown-backdrop {
+    background: rgba(0,0,0,.5);
 }
 
 
