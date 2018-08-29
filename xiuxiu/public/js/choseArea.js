@@ -36,7 +36,7 @@
       var uid = $('#uid').val();
       $(".dropdown-menu").hide();
     	$(".dropdown-backdrop").hide();
-      window.location.href="indexNew.htm?areaCode="+thisDataVal+"&uid="+uid;
+    
   });
   
   function areaTxt(areaId){
