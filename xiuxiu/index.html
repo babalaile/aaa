@@ -1,31 +1,43 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes"/>
-  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-  <meta name="format-detection" content="telephone=no"/>
-  <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="public/css/common.css" />
-  <link rel="stylesheet" type="text/css" href="public/css/new.css" />
-  <title>咻咻卡</title>
+		<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    
+	<link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="public/css/common.css" />
+	<link rel="stylesheet" type="text/css" href="public/webuploader/webuploader.css">
+	<link rel="stylesheet" type="text/css" href="public/css/new.css" />
+	<link rel="stylesheet" type="text/css" href="public/artDialog/css/ui-dialog.css" />
 
+	<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="public/artDialog/dist/dialog-min.js"></script>
+	<script type="text/javascript" src="public/js/common.js"></script>
+	<script type="text/javascript" src="public/js/alert.js"></script>
+	<script type="text/javascript" src="public/webuploader/webuploader.js"></script>
+	<script type="text/javascript" src="public/artDialog/dist/dialog-min.js"></script>  	<title>咻咻卡</title>
 </head>
-<body>
-   <div class="container-fluid">
+<body class="offer">
+    <div class="container-fluid">
 
         <div class="bcn">
             <ul class="pager">
-                <li class="center-block">天翼不限量99元 <small></small></li>
+            	<li class="previous"><a href="javascript:window.history.go(-1);"><span class="glyphicon glyphicon-chevron-left"></span> 返回</a></li>
+                <li class="center-block"><small></small></li>
                 <li class="choseTopAdd">
                     <img src="public/images/new/add.png" alt="" width="20">  
                      <div class="areaList">
+                     <input type="hidden" id="uid" value="">
                       <div id="selectBox" class="btn-group">
                          <div class="center-block dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                             <span class="txt"></span>
                          </div>
-                         <ul>
+                         <ul class="dropdown-menu" role="menu">
                             <li></li>
                          </ul>
                       </div>
@@ -34,37 +46,92 @@
             </ul>
         </div>
 
+        <div class="offerList">
+            <form method="post" action="chooseNbrPageNew.htm">
+                <input type="hidden" name="offerId" value="">
+                <input type="hidden" name="offerName" value="">
+                <input type="hidden" name="areaName" value="">
+                <input type="hidden" name="areaCode" value="027">
+                <input type="hidden" name="agentId" value="1027">
+                <ul></ul>
+            </form>
+        </div>
+        <div class="base blockBox">
+            <div class="tit01">套餐基本信息：</div>
+            <div class="text">
+                <table width="100%">
+                    <tr><td width="30%" height="35">套餐名称：</td><td class="offerName"></td></tr>
+                    <tr><td  height="35">归属地区：</td><td class="offerArea"></td></tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="intro blockBox footerPlhd">
+            <div class="tit01">套餐详情信息：</div>
+            <div class="text"><img src="" class="img_fluid"></div>
+        </div>
+
         <p class="nextStip"><button type="button" class="btn">下一步</button></p>
 
         <footer class="indexFoot">
-             <div class="left"><span id="">这里显示套餐内容</span></div>
+             <div class="left"><span></span></div>
              <div class="right"><span id="orderSearch">订单查询</span></div>
              <div class="center"><span id="custom">在线客服</span></div>
         </footer>
-    </div>
+		<script type="text/javascript" src="public/js/choseArea.js"></script>    </div>
 
+
+	
+    <script type="text/javascript">
+        (function($){
+            $(document).ready(function(){
+            	
+            	areaTxt('027');
+            	$('#uid').val('1027');
+            	$('.bcn .center-block small').before('套餐选择');
+            	$('.bcn .previous').hide();
+            	
+                var offerList = [{"area":"武汉市","name":"【拼多多】电信大王卡19元档","img":"/images/prodOfferImage/TMXBUpload_20180801094850_拼多多电信大王卡.jpg","intro":"/images/prodOfferImage/TMXBUpload_20180806140539_拼多多电信大王卡资费.jpg","offerId":"13"},{"area":"武汉市","name":"【拼多多】翼视卡9元档","img":"/images/prodOfferImage/TMXBUpload_20180801094941_拼多多翼视卡.jpg","intro":"/images/prodOfferImage/TMXBUpload_20180801094934_拼多多翼视卡资费.jpg","offerId":"14"},{"area":"武汉市","name":"【拼多多】99元全国不限量","img":"/images/prodOfferImage/TMXBUpload_20180801095212_拼多多全国不限量.jpg","intro":"/images/prodOfferImage/TMXBUpload_20180801095206_全国不限量-拼多多.jpg","offerId":"15"}];
+               	if(3==0){
+               		 $('.blockBox').hide();
+                }
+                $.each(offerList,function(key,val){
+                    $('.offerList ul').append('<li data-id="'+val.id+'"><img src="'+val.img+'" class="img_fluid"><span class="setico"></span></li>');
+                });
+                $('.offerList ul li').click(function(){
+                    $(this).parents('ul').find('li').removeClass('active');
+                    $(this).addClass('active');
+                    var index=$(this).index();
+                    $(this).parents('form').find('input[name=offerId]').val(offerList[index]['offerId']);
+                    $(this).parents('form').find('input[name=offerName]').val(offerList[index]['name']);
+                    $(this).parents('form').find('input[name=areaName]').val(offerList[index]['area']);
+                    $('.base .offerName').html(offerList[index]['name']);
+                    $('.indexFoot .left span').html(offerList[index]['name']);
+                    $('.base .offerArea').html(offerList[index]['area']);
+                    $('.intro .text .img_fluid').attr("src",offerList[index]['intro']);
+                });
+                $('.offerList ul li:first').click();
+                
+                $('.nextStip .btn').click(function(){
+	                if(3==0){
+	                	alert('当前没有套餐可选');
+	                }else{
+	                	$('.offerList form').submit();
+	                }
+                    
+                })
+
+            });
+        })(jQuery)
+    </script>
 </body>
 </html>
 
-<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
-<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="public/js/common.js"></script>
-<script type="text/javascript" src="public/js/choseArea.js"></script>
 
-<script>
 
-  $('#selectBox').first().find('div .txt').html("荆门市");
-  
-    $(".choseTopAdd").click(function(){
-  	alert("地址")
-  })
-  $("#custom").click(function(){
-  	 alert("客服")
-  })
 
-   $("#orderSearch").click(function(){
-  	 alert("订单查询")
-  })
-</script>
+
+
+
 
 
