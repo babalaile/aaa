@@ -29,15 +29,15 @@
             <ul class="pager">
             	<li class="previous"><a href="javascript:window.history.go(-1);"><span class="glyphicon glyphicon-chevron-left"></span> 返回</a></li>
                 <li class="center-block"><small></small></li>
-                <li class="choseTopAdd" onclick="alert('777')">
+                <li class="choseTopAdd" onclick="showArea()">
                     <img src="public/images/new/add.png" alt="" width="20">  
                      <div class="areaList">
                     
                       <div id="selectBox" class="btn-group">
-                         <div class="center-block dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                         <div class="center-block dropdown-toggle">
                             <span class="txt"></span>
                          </div>
-                         <ul class="dropdown-menu" role="menu">
+                         <ul class="dropdown-menu">
                             <li></li>
                          </ul>
                       </div>
@@ -123,6 +123,14 @@
 
             });
         })(jQuery)
+	    
+    function showArea(){
+        $(".dropdown-menu").show();
+	$(".dropdown-backdrop").show();
+    }	    
+	    
+	    
+	    
     </script>
 </body>
 </html>
