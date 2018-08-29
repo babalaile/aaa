@@ -1,44 +1,45 @@
-
 <!DOCTYPE html>
 <html>
 <head>
-		<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="format-detection" content="telephone=no"/>
     
-	<link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="public/css/common.css" />
-	<link rel="stylesheet" type="text/css" href="public/webuploader/webuploader.css">
-	<link rel="stylesheet" type="text/css" href="public/css/new.css" />
-	<link rel="stylesheet" type="text/css" href="public/artDialog/css/ui-dialog.css" />
+    <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="public/css/common.css" />
+    <link rel="stylesheet" type="text/css" href="public/webuploader/webuploader.css">
+    <link rel="stylesheet" type="text/css" href="public/css/new.css" />
+    <link rel="stylesheet" type="text/css" href="public/artDialog/css/ui-dialog.css" />
 
-	<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
-	<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="public/artDialog/dist/dialog-min.js"></script>
-	<script type="text/javascript" src="public/js/common.js"></script>
-	<script type="text/javascript" src="public/js/alert.js"></script>
-	<script type="text/javascript" src="public/webuploader/webuploader.js"></script>
-	<script type="text/javascript" src="public/artDialog/dist/dialog-min.js"></script>  	<title>咻咻卡</title>
+    <script type="text/javascript" src="public/js/common.js"></script>
+    <script type="text/javascript" src="public/js/alert.js"></script>
+    <script type="text/javascript" src="public/webuploader/webuploader.js"></script>
+    <script type="text/javascript" src="public/artDialog/dist/dialog-min.js"></script>     
+     <title>咻咻卡</title>
+
 </head>
 <body class="offer">
     <div class="container-fluid">
 
         <div class="bcn">
             <ul class="pager">
-            	<li class="previous"><a href="javascript:window.history.go(-1);"><span class="glyphicon glyphicon-chevron-left"></span> 返回</a></li>
+                <li class="previous"><a href="javascript:window.history.go(-1);"><span class="glyphicon glyphicon-chevron-left"></span> 返回</a></li>
                 <li class="center-block"><small></small></li>
-                <li class="choseTopAdd" onclick="showArea()">
+                <li class="choseTopAdd">
                     <img src="public/images/new/add.png" alt="" width="20">  
                      <div class="areaList">
                     
-                      <div id="selectBox" class="btn-group">
-                         <div class="center-block dropdown-toggle">
+                      <div id="selectBox" class="btn-group" >
+                         <div class="center-block" onclick="showArea()">
                             <span class="txt"></span>
                          </div>
-		
-			<div class="dropdown-backdrop"> </div>
+        
+                         <div class="backdrop"></div>
                          <ul class="dropdown-menu">
                             <li></li>
                          </ul>
@@ -80,22 +81,22 @@
              <div class="right"><span id="orderSearch">订单查询</span></div>
              <div class="center"><span id="custom">在线客服</span></div>
         </footer>
-		<script type="text/javascript" src="public/js/choseArea.js"></script>    </div>
+        <script type="text/javascript" src="public/js/choseArea.js"></script>    </div>
 
 
-	
+    
     <script type="text/javascript">
         (function($){
             $(document).ready(function(){
-            	
-            	areaTxt('027');
-            	$('#uid').val('1027');
-            	$('.bcn .center-block small').before('套餐选择');
-            	$('.bcn .previous').hide();
-            	
+                
+                areaTxt('027');
+                $('#uid').val('1027');
+                $('.bcn .center-block small').before('套餐选择');
+                $('.bcn .previous').hide();
+                
                 var offerList = [{"area":"武汉市","name":"【拼多多】电信大王卡19元档","img":"/images/prodOfferImage/TMXBUpload_20180801094850_拼多多电信大王卡.jpg","intro":"/images/prodOfferImage/TMXBUpload_20180806140539_拼多多电信大王卡资费.jpg","offerId":"13"},{"area":"武汉市","name":"【拼多多】翼视卡9元档","img":"/images/prodOfferImage/TMXBUpload_20180801094941_拼多多翼视卡.jpg","intro":"/images/prodOfferImage/TMXBUpload_20180801094934_拼多多翼视卡资费.jpg","offerId":"14"},{"area":"武汉市","name":"【拼多多】99元全国不限量","img":"/images/prodOfferImage/TMXBUpload_20180801095212_拼多多全国不限量.jpg","intro":"/images/prodOfferImage/TMXBUpload_20180801095206_全国不限量-拼多多.jpg","offerId":"15"}];
-               	if(3==0){
-               		 $('.blockBox').hide();
+                if(3==0){
+                     $('.blockBox').hide();
                 }
                 $.each(offerList,function(key,val){
                     $('.offerList ul').append('<li data-id="'+val.id+'"><img src="'+val.img+'" class="img_fluid"><span class="setico"></span></li>');
@@ -115,33 +116,17 @@
                 $('.offerList ul li:first').click();
                 
                 $('.nextStip .btn').click(function(){
-	                if(3==0){
-	                	alert('当前没有套餐可选');
-	                }else{
-	                	$('.offerList form').submit();
-	                }
+                    if(3==0){
+                        alert('当前没有套餐可选');
+                    }else{
+                        $('.offerList form').submit();
+                    }
                     
                 })
 
             });
         })(jQuery)
-	    
-    function showArea(){
-        $(".dropdown-menu").show();
-	$(".dropdown-backdrop").show();
-    }	    
-	    
-	    
-	    
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
 
