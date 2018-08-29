@@ -197,5 +197,8 @@
 .dropdown-backdrop {
     background: rgba(0,0,0,.5);
 }
+.dropdown-menu, .dropdown-backdrop{
+   display:none;
+}
 
 
