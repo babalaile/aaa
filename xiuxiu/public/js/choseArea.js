@@ -34,6 +34,8 @@
   $(".areaList ul").on('click','li',function(){
       var thisDataVal=$(this).attr('data-val');
       var uid = $('#uid').val();
+      $(".dropdown-menu").hide();
+    	$(".dropdown-backdrop").hide();
       window.location.href="indexNew.htm?areaCode="+thisDataVal+"&uid="+uid;
   });
   
