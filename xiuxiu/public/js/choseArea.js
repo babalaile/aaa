@@ -1,16 +1,21 @@
 
   $("#custom").click(function(){
-     window.location.href = 'http://im.189.cn/cw/?cf=1&cid=8024&manid=910';
+       window.location.href = 'http://im.189.cn/cw/?cf=1&cid=8024&manid=910';
   });
 
   $("#orderSearch").click(function(){
-      window.location.href = 'orderQueryPageNew.htm';
-  });
+       alert("订单查询")      
+   });
   
    function showArea(){
         $(".dropdown-menu").show();
         $(".backdrop").show();
   }       
+
+  $("#selectBox .backdrop").click(function(){
+       $(".dropdown-menu").hide();
+       $(this).hide();
+  })
 
   var areaGroup={};
     areaGroup["027"]="武汉市";
@@ -38,12 +43,11 @@
 
   $(".areaList ul").on('click','li',function(){
       var thisDataVal=$(this).attr('data-val');
-      var uid = $('#uid').val();
-
+    
        $("#selectBox .dropdown-menu").hide();
        $("#selectBox .backdrop").hide();
-     
-    //  window.location.href="indexNew.htm?areaCode="+thisDataVal+"&uid="+uid;
+       $("#selectBox .txt").html($(this).text())
+       //window.location.href="indexNew.htm?areaCode="+thisDataVal+"&uid="+uid;
   });
   
   function areaTxt(areaId){

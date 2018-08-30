@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <meta name="format-detection" content="telephone=no"/>
@@ -10,7 +10,8 @@
 	  <link rel="stylesheet" type="text/css" href="public/css/common.css" />
     <link rel="stylesheet" type="text/css" href="public/webuploader/webuploader.css">
     <link rel="stylesheet" type="text/css" href="public/css/new.css" />
-  <title>实名认证</title>
+
+    <title>咻咻卡</title>
 
 </head>
 <body>
@@ -18,15 +19,16 @@
         <div class="bcn">
             <ul class="pager">
                <li class="previous"><a href="javascript:window.history.go(-1);"><span class="glyphicon glyphicon-chevron-left"></span> 返回</a></li>
-                <li class="center-block">实名认证 <small></small></li>
+                <li class="center-block"> <small></small></li>
                  <li class="choseTopAdd">
                     <img src="public/images/new/add.png" alt="" width="20">  
                      <div class="areaList">
-                      <div id="selectBox" class="btn-group">
-                         <div class="center-block dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                      <div id="selectBox" class="btn-group" >
+                         <div class="center-block" onclick="showArea()">
                             <span class="txt"></span>
                          </div>
-                         <ul>
+                         <div class="backdrop"></div>
+                         <ul class="dropdown-menu">
                             <li></li>
                          </ul>
                       </div>
@@ -39,10 +41,10 @@
             <div class="tit01">实名认证：</div>
                 <form action="" id="pattForm" style="margin-top: 12px;">
                     <div class="form-group">
-                      <input type="text" name="" id="Name" class="form-control" placeholder="输入姓名" onblur="testname()">
+                      <input type="text" name="" id="Name" class="form-control" placeholder="输入姓名" >
                     </div>
                     <div class="form-group">
-                      <input type="text" name="" id="idCard" class="form-control" placeholder="输入身份证号" onblur="testcard()">
+                      <input type="text" name="" id="idCard" class="form-control" placeholder="输入身份证号">
                     </div>
                      <p id="errMsg" style="color:red;text-align: center;"></p>
                      <p class="patSuccess"><span>验证成功</span></p>
@@ -56,7 +58,6 @@
                       <div id="cf_picker1" class="picker">
                           <img src="public/images/new/cardface.png" alt="" width="100%">
                       </div>
-                     <p><button id="ctlBtn" type="button" class="btn btn-default">开始上传</button> </p>
                   </div>
                   <div class="fileList"></div>
                   <input type="hidden" name="" id="" value="">
@@ -85,12 +86,12 @@
                       </div>
                   </div>
                   <div class="fileList"></div>
-                  <input type="hidden" name="identityCardFrontSrc" id="" value="">
+                  <input type="hidden" name="" id="" value="">
               </div>
 
             </form>
-             <p class="nextStip"><button type="button" class="btn" id="ctlBtn" >下一步</button></p>
-		 <p><button id="ctlBtn" type="button" class="btn btn-default">开始上传</button> </p>
+             <p class="nextStip"><button type="button" class="btn" id="ctlBtn" >开始上传</button></p>
+             <p class="nextStip"><button type="button" class="btn" id="nextStip" >下一步</button></p>
         </div>
 
         <div class="footer">
@@ -107,74 +108,65 @@
 <script type="text/javascript" src="public/webuploader/webuploader.js"></script>
 <script type="text/javascript" src="public/js/common.js"></script>
 <script type="text/javascript" src="public/js/choseArea.js"></script>
+<script type="text/javascript" src="public/js/alert.js"></script>
 
-
-<!-- 姓名身份证查询 -->
-<script>
-
-  $('#selectBox').first().find('div .txt').html("荆门市");
-
- 
-   var ok1=false;ok2=false;
-   var Name = $("#Name")
-   var card = $("#idCard")
-
-  window.onload=function(){
-    Name.focus();
-  }
-
-    function testname(){
-        if(Name.val()==''){
-            $("#errMsg").html('请输入姓名');
-            Name.focus();
-            return ok1
-        }
-        else{
-            ok1 = true;
-            $("#errMsg").html('');
-            card.focus();
-            if(ok2){
-              search()
-            }
-        }
-     }
-     function testcard(){
-        if(card.val()==''){
-             $("#errMsg").html('请输入身份证号');
-             card.focus();
-             return ok2
-        }
-        else{
-            ok2 = true;
-            $("#errMsg").html('');
-            if(ok1){
-              search()
-            }
-        }
-     }
-
-   function search(){
-      var status = 1;
-      if(status ==1){
-        $(".patSuccess").show();
-      }
-      else{
-        $(".patFail").show();
-      }
-   }
-
+<script type="text/javascript">
+  $(document).ready(function(){
+         areaTxt('027');
+         $('.bcn .center-block small').before('实名认证');
+    });
 </script>
 
+<!-- 下一步 -->
 <script>
-  $("#custom").click(function(){
-  	 alert("客服")
-  })
+   $("#nextStip").click(function(){
 
-   $("#orderSearch").click(function(){
-  	 alert("订单查询")
-  })
+      var L1 = $("#cf_uploader1").find(".fileList>div").length;
+      var L2 = $("#cf_uploader2").find(".fileList>div").length;
+      var L3 = $("#cf_uploader3").find(".fileList>div").length;
 
-</script>
+      var Name = $("#Name").val();
+      var card = $("#idCard").val();
+
+      if(Name==""){
+          alert("姓名不能为空");
+          return false
+      }
+      else if(card==""){
+          alert("身份证号不能为空");
+          return false
+      }else{
+          console.log("查询身份证")
+          
+          var status = 1;
+          if(status ==1){
+              $(".patSuccess").show();
+               
+               if(L1==0){
+                   alert("请上传身份证正面照");
+                   return false
+               }
+               else if(L2==0){
+                   alert("请上传身份证反面照");
+                   return false
+               }
+               else if(L3==0){
+                   alert("请上传免冠照");
+                   return false
+               }
+               else{
+                  alert("上传数据")
+               }
+
+          }
+          else{
+             $(".patFail").show();
+             return false;
+          }
+      }
+   })
+
+</script> 
 
 <script type="text/javascript">
     (function($){
@@ -268,38 +260,5 @@
   })(jQuery)
 
 </script>
-
-<!-- <script>
-   $('#ctlBtn').click(function(){
-
-      var L1 = $("#cf_uploader1").find(".fileList>div").length;
-      var L2 = $("#cf_uploader2").find(".fileList>div").length;
-      var L3 = $("#cf_uploader3").find(".fileList>div").length;
-
-       if( $('.patFail').css('display')!==('none') ){
-           alert("身份信息有误");
-           return false
-       }
-       else if(L1==0){
-           alert("请上传身份证正面照");
-           return false
-       }
-       else if(L2==0){
-           alert("请上传身份证反面照");
-           return false
-       }
-       else if(L3==0){
-           alert("请上传免冠照");
-           return false
-       }
-       else{
-          alert("下一步")
-       }
-
-   })
-
-</script> -->
-
-
 
 

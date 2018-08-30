@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="public/css/common.css" />
   <link rel="stylesheet" type="text/css" href="public/css/new.css" />
 
-  <title>订单确认</title>
+  <title>咻咻卡</title>
 
 </head>
 <body>
@@ -18,15 +18,16 @@
         <div class="bcn">
             <ul class="pager">
                 <li class="previous"><a href="javascript:window.history.go(-1);"><span class="glyphicon glyphicon-chevron-left"></span> 返回</a></li>
-                <li class="center-block">订单确认 <small></small></li>
+                <li class="center-block"> <small></small></li>
                 <li class="choseTopAdd">
                     <img src="public/images/new/add.png" alt="" width="20">  
                      <div class="areaList">
-                      <div id="selectBox" class="btn-group">
-                         <div class="center-block dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                     <div id="selectBox" class="btn-group" >
+                         <div class="center-block" onclick="showArea()">
                             <span class="txt"></span>
                          </div>
-                         <ul>
+                         <div class="backdrop"></div>
+                         <ul class="dropdown-menu">
                             <li></li>
                          </ul>
                       </div>
@@ -57,11 +58,12 @@
                     <div class="form-group">
                       <input type="password" name="PUK" id="PUK" class="form-control" placeholder="输入PUK码" onblur="testPUK()">
                     </div>
-                     <p id="errMsg" style="color:red;text-align: center;"></p>
-
                     <div class="form-group">
                          <input type="text" class="form-control" id="Phone"  maxlength="11" placeholder="输入联系手机电话">
                     </div>
+                    
+                    <p id="searchMsg" style="color:red;text-align: center;"></p>
+                    <p id="errMsg" style="color:red;text-align: center;"></p>
 
                     <div class="inputItem">
                       <div class="agreement" style="text-align: center;padding: 20px 0px;">
@@ -73,7 +75,8 @@
                           </div>
                       </div>
                   </div>
-                  <p class="nextStip"><button type="button" class="btn" >下一步</button></p>
+           
+                   <p class="nextStip"><button type="button" class="btn">下一步</button></p>
               </form>
         </div>
 
@@ -88,18 +91,17 @@
 <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="public/js/common.js"></script>
+<script type="text/javascript" src="public/js/alert.js"></script>
 <script type="text/javascript" src="public/js/choseArea.js"></script>
-<script type="text/javascript" src="public/js/sideKeFu.js"></script>
 
 <script type="text/javascript">
-        $(document).ready(function(){
-            $.sideKeFu();
-        });
+  $(document).ready(function(){
+         areaTxt('027');
+         $('.bcn .center-block small').before('订单确认');
+    });
 </script>
 
 <script>
-
-  $('#selectBox').first().find('div .txt').html("荆门市");
 
    var ok1=false;ok2=false;
 
@@ -141,28 +143,15 @@
      }
 
      function search(){
-      console.log("查询")
         //查询错误显示
         var errHtml = ' *该卡板为<span>武汉</span>专属卡板 <a href="">这里</a> 选择<span>武汉</span>专属套餐 '
-          $("#errMsg").html(errHtml)
+          $("#searchMsg").html(errHtml)
      }
-
-</script>
-
-<script>
-  $("#custom").click(function(){
-  	 alert("客服")
-  })
-
-   $("#orderSearch").click(function(){
-  	 alert("订单查询")
-  })
 
 </script>
 
 <!-- 下一步 -->
 <script>
-
    $('.nextStip button').click(function(){
 
         var ok3 = false; ok4 = false; 
@@ -171,26 +160,29 @@
         var patt = /^1\d{10}$/;
 
           if(phoneNumber==''){
-              alert('请输入联系手机号');
+            
+              $("#errMsg").html('请输入联系手机号')
               return  ok3;
           }
           else if(!patt.test(phoneNumber)) {  
-              alert('请填写正确的手机号');   
+               
+              $("#errMsg").html('请填写正确的手机号')
               return  ok3;
           }else{
               ok3 = true;
           }
           if($("#agree").val()!="ok"){
-              alert('请先阅读"中国电信协议"');
+           
+               $("#errMsg").html('请先阅读"中国电信协议')
               return  ok4;
           }else{
                ok4 = true; 
           }
 
-        if(ok3&&ok4){
-             alert("下一步")
+        if(ok1&&ok2&&ok3&&ok4){
+             window.location.href="renzheng.html"
          }
-   
+  
       })
 
 </script>

@@ -242,7 +242,7 @@
       var ratio = window.devicePixelRatio || 1,state='pending';
       var defaults={
         swf:'public/webuploader/Uploader.swf',
-        server:'_json/uploadSuccess.json',
+    server:'public/js/test.json',
         pick: '#picker',
         fileNumLimit:0,
         accept: {
@@ -342,7 +342,7 @@
         }
       });
 
-      webUploader.find(options.uploadBtn).on( 'click', function() {
+      $(options.uploadBtn).on( 'click', function() {
         if ( state === 'uploading' ) {
           uploader.stop();
         } else {
@@ -385,7 +385,7 @@
 
       var defaults={
         swf:'public/webuploader/Uploader.swf',
-        server:'uploadSuccess.json',
+    server:'public/js/test.json',
         pick: '#picker',
         fileNumLimit:0,
         accept: {
@@ -474,10 +474,9 @@
       // 文件上传成功，给item添加成功class, 用样式标记上传成功。
       uploader.on( 'uploadSuccess', function( file ,response) {
   
-          console.log(response);
-  
         $( '#'+file.id ).addClass('upload-state-done');
         if(response.code=='0'){
+      
           $( '#'+file.id).find('.close').hide();
           $( '#'+file.id).find('img').attr('data-src',response.data.src);
           $('<div class="success">上传成功！</div>').appendTo( $( '#'+file.id ) );
@@ -515,7 +514,7 @@
         }
       });
 
-      webUploader.find(options.uploadBtn).on( 'click', function() {
+      $(options.uploadBtn).on( 'click', function() {
         if ( state === 'uploading' ) {
           uploader.stop();
         } else {
@@ -556,28 +555,28 @@
   })
 
   $(document).ready(function(){
-		
-		//单选
-		$("form").on('click','input[name^=item][type=checkbox]',function(){
-			var formObj=$(this).parents('form').first();
-			var countNum=$(".manage").find('input[name^=item][type=checkbox]').length;
-			var checkedNum=$(".manage").find('input[name^=item][type=checkbox]:checked').length;
+    
+    //单选
+    $("form").on('click','input[name^=item][type=checkbox]',function(){
+      var formObj=$(this).parents('form').first();
+      var countNum=$(".manage").find('input[name^=item][type=checkbox]').length;
+      var checkedNum=$(".manage").find('input[name^=item][type=checkbox]:checked').length;
 
-			if(countNum == checkedNum){
+      if(countNum == checkedNum){
         formObj.find("input[name=checkAll]").attr('checked','checked').prop('checked',true);;
-			}else{
+      }else{
         formObj.find("input[name=checkAll]").removeAttr('checked').prop('checked',false);;
-			}
-		});
+      }
+    });
 
-		//全选
-		$(".manage").on('click','input[name=checkAll]',function(){
-			if($(this).is(':checked')){
-			  $(".manage").find('input[name^=item][type=checkbox]:not(:disabled)').attr('checked','checked').prop('checked',true);;
-			}else{
-			  $(".manage").find('input[name^=item][type=checkbox]').removeAttr('checked').prop('checked',false);
-			}
-		});
+    //全选
+    $(".manage").on('click','input[name=checkAll]',function(){
+      if($(this).is(':checked')){
+        $(".manage").find('input[name^=item][type=checkbox]:not(:disabled)').attr('checked','checked').prop('checked',true);;
+      }else{
+        $(".manage").find('input[name^=item][type=checkbox]').removeAttr('checked').prop('checked',false);
+      }
+    });
 
-	})
+  })
 })(jQuery)
