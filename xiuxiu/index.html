@@ -70,7 +70,7 @@ if ((“standalone” in window.navigator) && window.navigator.standalone) {
 
          <div class="base blockBox card">
             <div class="tit01">激活卡片：</div>
-                <form action="" id="offerForm" style="margin-top: 12px;">
+                <form action="renzheng.html" id="offerForm" style="margin-top: 12px;">
                     <div class="form-group">
                       <input type="text" name="ICCID" id="ICCID" class="form-control" placeholder="输入ICCID码(仅数字)" onkeyup="value=value.replace(/[\W]/g,'')" onblur="testID()">
                     </div>
@@ -199,7 +199,8 @@ if ((“standalone” in window.navigator) && window.navigator.standalone) {
           }
 
         if(ok1&&ok2&&ok3&&ok4){
-             window.location.href="renzheng.html"
+             alert("提交")
+             $("form").submit()
          }
   
       })
