@@ -61,6 +61,7 @@
 	outline: 0 none!important;
 	margin-bottom: 15px;
 	width: 100%;
+	 border-radius: 0!important;
 }
 
 .combatList{
