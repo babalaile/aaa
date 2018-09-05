@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+	 <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+	 <link rel="stylesheet" type="text/css" href="public/css/demo.css" />
+   <title></title>
+</head>
+<body>
+    <div class="container-fluid" style="padding:0;">
+          <div style="position: relative;">
+              <img src="public/images/background.png" alt="" width="100%" >
+              <div class="BusinessHall">
+                    <p>
+                       <span>营业员号码：<span id="worderNum"></span>13266666666</span></br>
+                       <span>营业厅名称：<span>武汉市江岸区</span></span>
+                    </p>
+              </div>
+              <form action="" class="invite">
+                  <p>
+                     <input id="newUserNum" type="text" placeholder="输入新用户号码" maxlength="11">
+                     <img id="invitation" src="public/images/btn.png" alt="" width="150">
+                  </p>
+              </form>
+
+              <!-- 战绩列表 -->
+               <div class="combatList">
+                  <table class="table table-condensed">
+                      <thead>
+                        <tr>
+                            <th>用户号码</th>
+                            <th>邀请时间</th>
+                            <th>
+                                <select class="STATUS">
+                                  <option data="0">邀请状态</option>
+                                  <option data="1">成功</option>
+                                  <option data="2">失败</option>
+                                  <option data="3">待注册</option>
+                                </select>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                   
+                        </tbody>
+                    </table>
+               </div>
+
+                <div class="pageBTN">
+                      <p>
+                          <button id="prev">上一页</button>
+                          <span id="nowPage">1</span> <span>/</span> <span id="totlePage"></span>
+                          <button id="next">下一页</button>
+                       </p>
+                </div>
+                <!-- 活动规则 -->
+               <div class="Rule">
+                   <div>
+                      <h5>活动时间：</h5>
+                      <p>2018年9月1日-2018年12月1日</p>
+
+                      <h5 style="margin-top:20px;">活动规则：</h5>
+                      <p>1、本活动仅对湖北电信营业厅工作人员开展，非活动目标用户无法参与，尽请谅解；</p>
+                      <p>2、营业员每邀请一位新用户并形成绑定关系，新用户需在48小时内，通过页面中展示的二维码下载并成功注册即算邀新成功。否则解除绑定关系；</p>
+                      <p>3、新用户（被邀请人）同一时间仅可与一位营业员形成绑定关系，48小时内若未注册则解绑；</p>
+                      <p>4、营业员每成功邀请3人即可获得5元话费奖励。话费奖励直接充值到活动页面登录的手机号码上。充值在3个工作日内到账；</p>
+                      <p>5、是否邀新成功以页面展示为准。当日邀新结果会在次日更新，请知晓。</p>
+                 </div>
+               </div>
+          </div>
+    </div>
+
+   <!-- 二维码 -->
+   <div id="qcode">
+        <div class="floor"></div>
+        <div class="codeImg">
+            <img src="" alt="" width="200" id="ewm"> 
+            <p>扫描上方二维码页面下载</p>
+            <p><img src="public/images/close.png" alt="" width="28" class="closeBtn"></p>
+        </div>
+   </div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/js/alert.js"></script>
+<script type="text/javascript" src="public/js/index.js"></script>
+
+<!-- <script>
+  var num = "13266666666"
+  $("#worderNum").html(secret(num))
+</script> -->
+
+<script>
+
+var base ="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"
+
+
+   $("#invitation").click(function(){
+
+         var newUserNum = $("#newUserNum").val();
+         if(newUserNum ==""){
+            alert("请输入新用户号码")
+         }
+         else{
+            $("#qcode").show();
+            $("#ewm").attr("src","data:image/png;base64,"+base+"");
+         }
+   })
+
+  $(".closeBtn").click(function(){
+       $("#qcode").hide();
+  })
+</script>
+
+<script>
+
+ var json = {
+       
+         "list": [
+             { 
+               "number":'12347777777', 
+               "time":"9月1号 12:00:00",
+               "status":"成功"
+             },
+              { 
+               "number":'12347777777', 
+               "time":"9月1号 12:00:00",
+               "status":"待注册"
+             },
+              { 
+               "number":'12347777777', 
+               "time":"9月1号 12:00:00",
+               "status":"待注册"
+             },
+              { 
+               "number":'12347777777', 
+               "time":"9月1号 12:00:00",
+               "status":"待注册"
+             },
+              { 
+               "number":'12347777777', 
+               "time":"9月1号 12:00:00",
+               "status":"待注册"
+             },
+             { 
+               "number":'12347777777', 
+               "time":"9月1号 12:00:00",
+               "status":"待注册"
+             },
+             { 
+               "number":'12347777777', 
+               "time":"9月1号 12:00:00",
+               "status":"待注册"
+             }
+          ]
+    }
+
+         
+    for(var i=0;i<json.list.length;i++){
+
+       var item=json.list[i];
+      // var NUM = secret(item.number)
+      
+    var trList  =''
+                +'<tr>'
+                +'<td>'+item.number+'</td>'
+                +'<td>'+item.time+'</td>'
+                +'<td>'+item.status+'</td>'
+                +'</tr>'
+                +'' 
+
+    $('tbody').append(trList);  
+  }
+
+/*选择筛选列表*/
+  $(".STATUS").change(function(){
+     var val = $(this).val();
+     var dataVal = $(this).find("option:selected").attr("data")
+     console.log(dataVal)
+     console.log(val)
+
+  })
+
+ var totlePage = Math.ceil(json.list.length/6);
+ var nowIndex = Number($("#nowPage").html());
+
+ $("#totlePage").html(totlePage);
+
+/*点击上一页*/
+ $("#prev").click(function(){
+
+   if(nowIndex==1){
+       alert("没有上一页")
+   }
+   else{
+       nowIndex -= 1
+       console.log(nowIndex)
+       $("#nowPage").html(nowIndex);
+   }
+})
+
+/*点击下一页*/
+ $("#next").click(function(){
+    if(nowIndex==totlePage){
+       alert("没有下一页")
+   }
+   else{
+       nowIndex += 1;
+       console.log(nowIndex)
+       $("#nowPage").html(nowIndex);
+   }
+
+})
+
+</script>
+
+
+
+
