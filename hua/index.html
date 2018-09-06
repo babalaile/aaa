@@ -28,13 +28,12 @@
               </form>
 
               <!-- 战绩列表 -->
-               <div class="combatList">
-                  <table class="table table-condensed">
-                      <thead>
+               <table class="table table-condensed tableHEAD">
+                      <thead style="text-align: center;">
                         <tr>
-                            <th>用户号码</th>
-                            <th>邀请时间</th>
-                            <th>
+                            <th width="40%">用户号码</th>
+                            <th width="40%">邀请时间</th>
+                            <th width="20%">
                                 <select class="STATUS">
                                   <option data="0">邀请状态</option>
                                   <option data="1">成功</option>
@@ -44,6 +43,9 @@
                             </th>
                         </tr>
                         </thead>
+                    </table>
+               <div class="combatList">
+                  <table class="table table-condensed">
                         <tbody>
                    
                         </tbody>
@@ -90,12 +92,6 @@
 <script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="public/js/alert.js"></script>
-<script type="text/javascript" src="public/js/index.js"></script>
-
-<!-- <script>
-  var num = "13266666666"
-  $("#worderNum").html(secret(num))
-</script> -->
 
 <script>
 
@@ -170,9 +166,9 @@ var base ="iVBORw0KGgoAAAANSUhEUgAAATwAAAExCAMAAADWRe7qAAAAAXNSR0IArs4c6QAAAMNQT
       
     var trList  =''
                 +'<tr>'
-                +'<td>'+item.number+'</td>'
-                +'<td>'+item.time+'</td>'
-                +'<td>'+item.status+'</td>'
+                +'<td width="40%">'+item.number+'</td>'
+                +'<td width="40%">'+item.time+'</td>'
+                +'<td width="20%">'+item.status+'</td>'
                 +'</tr>'
                 +'' 
 
