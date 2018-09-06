@@ -19,12 +19,13 @@ select {
   -webkit-appearance:none;
 
   /*在选择框的最右侧中间显示小箭头图片*/
-  background: url("https://raw.githubusercontent.com/ourjs/static/gh-pages/2015/arrow.png") no-repeat scroll right center transparent;
+  background: url("../images/downarr.png") no-repeat scroll right center transparent;
+  background-size: 14px;
 
   /*为下拉小箭头留出一点位置，避免被文字覆盖*/
-  padding-right: 14px;
+  padding-right: 16px;
+  padding-left: 2px;
 }
-
 
 .BusinessHall{
 	background: url(../images/textBg.png) repeat ;
@@ -83,7 +84,7 @@ select {
 	width: 88%;
     height: 16%;
     position: absolute;
-    top: 42%;
+    top: 43%;
     left: 6%;
     font-size:13px;
     overflow: auto;
@@ -128,6 +129,7 @@ select {
 }
 table thead tr th{
     text-align: center;
+    color: #139A85;
 }
 table tr td{
     text-align: center;
@@ -137,7 +139,7 @@ table tr td{
      width: 88%;
     height: 36px;
     position: absolute;
-    top: 58%;
+    top: 59%;
     left: 6%;
 }
 .pageBTN button,.pageBTN span{
@@ -174,6 +176,14 @@ table tr td{
 .codeImg p{
     margin-top: 26px;
     color: #FFF;
+}
+
+.tableHEAD{
+    width: 88%;
+    position: absolute;
+    top: 40.5%;
+    left: 6%;
+    font-size: 13px;
 }
 
 
