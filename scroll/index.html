@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1,minimum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title></title>
+<style>
+    .lottery {
+        position: relative;
+        display: inline-block;
+    }
+    .lottery img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-left: -76px;
+        margin-top: -82px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+    <div class="lottery">
+        <canvas id="myCanvas" width="600" height="600" style="border:1px solid #d3d3d3;width: 100%;">
+            当前浏览器版本过低，请使用其他浏览器尝试
+        </canvas>
+      
+        <img src="imgs/start.png" id="start">
+    </div>
+</body>
+</html>
+
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/1.js"></script>
+
+<script>
+
+    var angel = "";
+    var list = {}
+    var wheelSurf
+  
+      $.ajax({ 
+           url:'js/test.json',
+           type:'get',
+           dataType:"json",
+           success:function(initData){
+
+                if(initData.status=="000"){
+              
+                     function getGift(){
+                        var percent = Math.random()*100
+                        var totalPercent = 0
+                        for(var i = 0 ,l = initData.list.length;i<l;i++){
+                            totalPercent += initData.list[i].percent
+                            if(percent<=totalPercent){
+                                return initData.list[i]
+                            }
+                        }           
+                    }
+
+                    angel = 360 / initData.list.length
+
+                    // 格式化成插件需要的奖品列表格式
+                    for (var i = 0, l = initData.list.length; i < l; i++) {
+                        list[initData.list[i].rank] = {
+                            id:initData.list[i].id,
+                            name: initData.list[i].name,
+                            image: initData.list[i].image
+                        }
+                    }
+                    // 查看奖品列表格式
+                    
+                    // 定义转盘奖品
+                    wheelSurf = $('#myCanvas').WheelSurf({
+                        list: list, // 奖品 列表，(必填)
+                        outerCircle: {
+                            color: '#df1e15' // 外圈颜色(可选)
+                        },
+                        innerCircle: {
+                            color: '#f4ad26' // 里圈颜色(可选)
+                        },
+                        dots: ['#fbf0a9', '#fbb936'], // 装饰点颜色(可选)
+                        disk: ['#ffb933', '#ffe8b5', '#ffb933', '#ffd57c', '#ffb933', '#ffe8b5', '#ffd57c'], //中心奖盘的颜色，默认7彩(可选)
+                        title: {
+                            color: '#5c1e08',
+                            font: '19px Arial'
+                        } // 奖品标题样式(可选)
+                    })
+
+            // 初始化转盘
+            wheelSurf.init()
+
+          }
+          else{
+            alert(initData.errormsg)
+          }
+
+    },
+      error:function(){
+         alert("服务器错误")
+      }
+
+  })  //初始化数据ajax
+
+
+    // 点击抽奖
+ 
+    $("#start").on('click', function () {
+ 
+          $.ajax({ 
+               url:'js/win.json',
+               type:'get',
+               dataType:"json",
+               success:function(winData){
+
+                   if(winData.status!="000"){
+                        return false;
+                    }
+                    else{
+                        var count = 0
+                        // 计算奖品角度
+
+                        for (const key in list) {
+                            if (list.hasOwnProperty(key)) {                    
+                                if (winData.gift.id == list[key].id) {
+                                    break;
+                                }
+                                count++    
+                            }
+                        }
+                  
+                        // 转盘抽奖，
+                        wheelSurf.lottery((count * angel + angel / 2), function () {
+                           console.log(winData.gift.name)
+                        })
+                    }
+                }
+        })
+})
+
+    
+</script> 
+
+
