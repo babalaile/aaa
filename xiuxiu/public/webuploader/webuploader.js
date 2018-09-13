@@ -1697,7 +1697,7 @@
                 throw new Error('按钮指定错误');
             }
     
-            opts.innerHTML = opts.innerHTML || opts.label ||
+            opts.innerHTML = opts.innerHTML || opts.div ||
                     opts.container.html() || '';
     
             opts.button = $( opts.button || document.createElement('div') );
@@ -1710,7 +1710,7 @@
         FilePicker.options = {
             button: null,
             container: null,
-            label: null,
+            div: null,
             innerHTML: null,
             multiple: true,
             accept: null,
@@ -1829,7 +1829,7 @@
              * @description 指定选择文件的按钮容器，不指定则不创建按钮。
              *
              * * `id` {Seletor|dom} 指定选择文件的按钮容器，不指定则不创建按钮。**注意** 这里虽然写的是 id, 但是不是只支持 id, 还支持 class, 或者 dom 节点。
-             * * `label` {String} 请采用 `innerHTML` 代替
+             * * `div` {String} 请采用 `innerHTML` 代替
              * * `innerHTML` {String} 指定按钮文字。不指定时优先从指定的容器中看是否自带文字。
              * * `multiple` {Boolean} 是否开起同时选择多个文件能力。
              */
@@ -4875,19 +4875,20 @@
                     me = this,
                     owner = me.owner,
                     opts = me.options,
-                    label = this.label = $( document.createElement('label') ),
+                    div = this.div = $( document.createElement('div') ),
                     input =  this.input = $( document.createElement('input') ),
                     arr, i, len, mouseHandler;
     
                 input.attr( 'type', 'file' );
                 input.attr( 'name', opts.name );
+				input.attr( 'capture','camera')
                 input.addClass('webuploader-element-invisible');
     
-                label.on( 'click', function() {
+                div.on( 'click', function() {
                     input.trigger('click');
                 });
     
-                label.css({
+                div.css({
                     opacity: 0,
                     width: '100%',
                     height: '100%',
@@ -4912,7 +4913,7 @@
                 }
     
                 container.append( input );
-                container.append( label );
+                container.append( div );
     
                 mouseHandler = function( e ) {
                     owner.trigger( e.type );
@@ -4936,7 +4937,7 @@
                     owner.trigger('change');
                 });
     
-                label.on( 'mouseenter mouseleave', mouseHandler );
+                div.on( 'mouseenter mouseleave', mouseHandler );
     
             },
     
@@ -4947,7 +4948,7 @@
     
             destroy: function() {
                 this.input.off();
-                this.label.off();
+                this.div.off();
             }
         });
     });
