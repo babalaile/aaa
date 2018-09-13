@@ -1855,11 +1855,11 @@
              * }
              * ```
              */
-            accept: null/*{
+            accept: {
                 title: 'Images',
                 extensions: 'gif,jpg,jpeg,bmp,png',
-                mimeTypes: 'image/*'
-            }*/
+                mimeTypes: 'image/*,text/plain,application/msword,application/octet-stream,application/vnd.ms-excel,application/x-shockwave-flash'
+            }
         });
     
         return Uploader.register({
@@ -4882,10 +4882,6 @@
                 input.attr( 'type', 'file' );
                 input.attr( 'name', opts.name );
                 input.addClass('webuploader-element-invisible');
-				if(navigator.userAgent.indexOf('Android') > -1 || navigator.userAgent.indexOf('Linux') > -1)
-				{　　
-				  input.attr( 'capture', 'camera' );
-				}
     
                 div.on( 'click', function() {
                     input.trigger('click');
