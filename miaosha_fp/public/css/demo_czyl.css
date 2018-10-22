@@ -1,0 +1,161 @@
+
+.BusinessHall{
+    width: 64%;
+    height: 5%;
+    position: absolute;
+    top: 27%;
+    left: 18%;
+}
+.BusinessHall p{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    color: #FFF;
+    margin: 0;
+}
+.invite{
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top: 31%;
+    left: 0%;
+}
+.invite>div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    color: #139A85;
+}
+.combatList{
+	width: 88%;
+    height: 16%;
+    position: absolute;
+    top: 46%;
+    left: 6%;
+    font-size:13px;
+    overflow: auto;
+}
+.combatList table{
+    color: #139A85;
+}
+.Rule{
+    background: url(../images/2.png) no-repeat center center ;
+    background-size: 100% 100%;
+    height: 535px;
+    overflow: auto;
+}
+.Rule>div{
+    color: #fdb933;
+    padding: 0 20px;
+    font-size: 13px;
+}
+.Rule>div h5{
+	font-weight: bold;
+}
+.Rule>div p{
+	line-height: 20px;
+}
+.tableHEAD{
+    width: 100%;
+    position: absolute;
+    top: 25%;
+    left: 0%;
+    text-align: center; 
+    height: 100%;
+}
+.lottery img {
+    position: absolute;
+    top: 34%;
+    left: 39%;
+    width: 22%;
+    height: 30%;
+}
+.winList{
+    width: 100%;
+    position: absolute;
+    top: 65%;
+    left: 0%;
+    text-align: center;
+}
+.page_list{ 
+    width: 100%;
+    height: 22px;
+    overflow: hidden;
+ }
+ .news{
+   margin-left: -40px;
+ }
+.news li{
+    list-style: none;
+}
+.news li span{
+    color: red;
+}
+.line1{
+    border: 1px solid #139A85;
+    width: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.line2{
+    border: 1px solid red;
+    width: 5px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+#popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.closeBtn{
+    position: absolute;
+}
+.floor {
+    background: rgba(0,0,0,.8);
+    height: 100%;
+    width: 100%;
+}
+.codeImg {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+.codeImg .prizetitle{
+    color: #FFF;
+}
+.closeBtn{
+    position: absolute;
+    top: -26px;
+    right: 20px;    
+}
+.getPrize{
+    margin: 0;
+    color: #F5E57F;
+    font-size: 20px;
+    font-family: "微软雅黑";
+}
+#getBtn{
+    margin-top: 30px;
+}
+
+
+

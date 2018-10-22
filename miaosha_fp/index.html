@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+	  <link rel="stylesheet" type="text/css" href="public/bootstrap-3.3.4/css/bootstrap.min.css" />
+	  <link rel="stylesheet" type="text/css" href="public/css/demo_czyl.css" />
+    <title></title>
+    <style>
+     .activeTime p{
+        position: absolute;
+    		top: 48%;
+    		left: 50%;
+    		width: 100%;
+    		text-align: center;
+    		padding: 10px;
+    		transform: translateX(-50%) translateY(-50%);
+    		-webkit-transform: translateX(-50%) translateY(-50%);
+    		-moz-transform: translateX(-50%) translateY(-50%);
+    		-ms-transform: translateX(-50%) translateY(-50%);
+    		color: #ffc20e;
+    		font-size: 14px;
+        font-style: italic;
+        letter-spacing:2px;
+        font-weight: bold;
+     }  
+     .qianggou{
+        position: absolute;
+        top: 77%;
+        left: 0%;
+        width: 100%;
+        height: 7%;
+     }  
+     .hand{
+        width: 50%;
+        height: 100%;
+        margin: 0 auto;
+     }
+    </style>
+</head>
+<body>
+    <div class="container-fluid" style="padding:0;">
+          <div style="position: relative;">
+              <img src="public/images/1.png" alt="" width="100%" >
+              <div class="activeTime">
+                   <p id="time"></p>
+              </div>
+      			  <div class="qianggou">
+      				  <div class="hand"></div>
+      			  </div>
+          </div>
+          <!-- 活动规则 -->
+          <div class="Rule">
+               <div>
+                   <h6 style="font-weight: bold;">每月抽奖次数不限，100%中奖每月抽奖次数不限，100%中奖</h6>
+                </div>
+          </div>
+    </div>
+</body>
+</html>
+
+<script type="text/javascript" src="public/js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="public/bootstrap-3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="public/js/alert.js"></script>
+
+<script>
+ //按钮点击
+$(".hand").click(function(){
+
+    alert("抢购")
+})
+
+</script>
+
+<script>
+
+  //倒计时
+    var h=0;
+    var m=0;
+    var s=10;
+    function cutdon(){
+        s--;
+        if(s<0){
+            s=60+s;
+            m=m-1;
+        }
+        if(m<0){
+            m=60+m;
+            h=h-1;
+        }
+        var time= document.getElementById("time");
+        time.innerHTML='剩余'+h+'小时'+m+'分'+s+'秒开始';
+       var Time = setTimeout("cutdon()",1000);
+       
+      if(h==0&&m==0&&s==0){
+           time.innerHTML='活动结束';
+           clearInterval(Time)
+        }
+    }
+  cutdon();
+
+</script>
+
+<script>
+
+  var Rule =[
+         
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          },
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          },
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          },
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          },
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          },
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          },
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          },
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          },
+          {
+            con:"活动时间：2018年9月-2018年12月活动时间：2018年9月-2018年12月"
+          }
+
+     ]
+
+     for (var i=0;i<Rule.length;i++) {
+      
+         var item = Rule[i]
+         var Html = "<p>"+(i+1)+"."+item.con+"</p>"
+
+         $(".Rule>div>h6").before(Html)
+
+   }
+
+</script>
+
